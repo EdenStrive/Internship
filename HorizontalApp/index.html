@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=320,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>手机横屏</title>
+</head>
+<style>
+    .warp {
+        width: 100%;
+        height: 750px;
+        background: url("./img/bg1.png") no-repeat center/100% 100%;
+        position: relative;
+        opacity: 1;
+        z-index: 1; 
+    }
+    .mask_h_tips {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9998;
+        display: none; 
+    }
+    .mask_h_tips p {
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -15px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 24px; 
+    }
+</style>
+<script src="./js/mmd-plugin.min.1.0.1.js"></script>
+<body>
+<!--
+参数简易说明:
+1.view-mode = "v" "v"竖屏,"h"横屏;
+2.view-rotation="auto" 默认"auto" 自动旋转,"v"竖屏可视,"h"横屏可视;
+3.view-scale="exactfit" 缩放模式 默认"exactfit";
+                    "exactfit":高宽等于屏幕高宽;
+                    "noborder":裁剪铺满;
+                    "noscale":不缩放;
+                    "showall":显示全部;
+                    "width":宽度等于屏幕宽;
+                    "height":高度等于屏幕高;
+4.view-align="",默认为"" 居中;
+                    "t":靠顶;
+                    "l":靠左;
+                    "r":靠右;
+                    "b":靠底;
+                    可以结合一起用，比如"tl","tr","bl","br";
+5.view-width="400" 目标宽 默认"400";
+6.view-height="400" 目标高 默认"400";
+-->
+<div view-mode="h" view-rotation="auto" view-scale="exactfit" view-width="1624" view-height="750" view-align="" id="wrapper"> <!--  宽度即为背景图片的宽度 -->
+    <div class="warp">
+        需要显示的内容
+    </div>
+    <div class="mask_h_tips">
+        <p>请您开启竖排方向锁定功能，然后浏览该页面~</p>
+    </div>
+</div>
+</body>
+
+<script>
+    function isBrowser() {
+        var ua = navigator.userAgent.toLowerCase();//用于跨平台，各种浏览器，移动设备兼容（手机类型）进行兼容判断 后续进行设置等
+        if (ua.match(/MicroMessenger/i) == "micromessenger" || ua.match(/WeiBo/i) == "weibo") {
+            return true;    //微信内置浏览器
+        } else if (ua.match(/QQ/i) == 'qq') {
+            return true;    //QQ内置浏览器
+        }
+        return false;
+    }
+    function AutoPage(page) {
+        var PortOrLand = 0;
+        var p = window.matchMedia("(orientation: portrait)");//matchMedia 用户判断可见区域的高度是否大于宽度 大于则为true
+        console.log(p)
+        var l = window.matchMedia("(orientation: landscape)");
+        if (p.matches) {
+            PortOrLand = 750;
+            document.querySelector(".mask_h_tips").style.display = "none"
+            if (!isBrowser()) {  //对于不同浏览器做出不同的兼容
+                move();
+            } else {
+                stop();
+            }
+        } else if (l.matches) { //window.orientation == 90 || window.orientation == -90 不推荐这么使用 此功能已经被web标准中删除
+            console.log(PortOrLand)
+            PortOrLand = page;
+            document.querySelector(".mask_h_tips").style.display = "block"
+        };
+        document.documentElement.style.fontSize = document.documentElement.clientWidth * 80 / PortOrLand + 'px';
+    }
+    ;
+    AutoPage(1334);
+    window.addEventListener('resize', AutoPage, false);//增加事件监听，当浏览器窗口大小发生变化时进行进行调用AutoPage进行判断是否进行显示遮掩层
+
+
+    var mo = function (e) {
+        e.preventDefault();
+    };
+    /***禁止滑动***/
+    function stop() {
+        document.body.style.overflow = 'hidden';
+        document.addEventListener("touchmove", mo, {passive: false});//禁止页面滑动
+    }
+    /***取消滑动限制***/
+    function move() {
+        document.body.style.overflow = '';//出现滚动条
+        document.removeEventListener("touchmove", mo, false);
+    }
+    if (!isBrowser()) {
+    } else {
+        stop();
+    }
+</script>
+</html>

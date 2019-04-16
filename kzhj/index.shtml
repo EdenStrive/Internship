@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>《空之轨迹》官方网站_立即下载</title>
+    <meta name="keywords" content="空之轨迹" />
+    <meta name="description" content="空之轨迹" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Design:; Web Layout:;" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <script>
+    if (navigator.appVersion.indexOf('Android') != -1) {
+        document.addEventListener("DOMContentLoaded",
+            function(e) {
+                document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth / 640;
+            });
+    };
+    </script>
+</head>
+
+<body>
+	<a href="####" target="_blank" title="立即下载" class="t btn1" id="download">立即下载</a>
+	<div class="con con1"><a href="####" target="_blank" title="立即下载" class="link link1"></a></div>
+    <div class="con con2">
+        <div class="sw-box class="swiper-container"">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><img src="img/con2.jpg" alt=""></li>
+                <li class="swiper-slide"><img src="img/con2-1.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="con con3">
+        <section class="feature">
+            <div class="box">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="javascript:;"><img src="img/1.jpg" /></a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="javascript:;"><img src="img/2.jpg" /></a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="javascript:;"><img src="img/3.jpg" /></a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="javascript:;"><img src="img/4.jpg" /></a>
+                    </li>
+                </ul>                
+            </div>
+            <div class="events_nav"></div>
+        </section>
+    </div>
+    <div class="con con4"></div>
+    <div class="con con5"><a href="####" target="_blank" title="立即下载" class="link link2"></a></div>
+    <p class="commbot">xxxxxx</p>
+	<script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        new Swiper(".sw-box", {
+                onClick : function(swiper) {
+                },
+                loop : true,
+                autoplay: 3000,//可选选项，自动滑动
+            });
+            //图片滑动
+            var num_video = $(".feature li").length;
+            if (num_video > 1) {
+                var video = new Swiper(".feature .box", {
+                    paginationClickable : true,
+                    pagination : ".events_nav",
+                    prevButton : '.feature .prev',
+                    nextButton : '.feature .next',
+                    onClick : function(swiper) {
+                    },
+                    loop : true
+                });
+            }
+        </script>
+        <!--#include virtual="/inc/dma.html" -->
+</body>
+</html>
