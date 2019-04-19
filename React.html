@@ -19,7 +19,7 @@ ReactDOM.render(
   <h1>Hello, world!</h1>,
   document.getElementById('root')
 );
-// ----------------------------------------------
+// --------------------------------------------------------------jsx
 function formatName(user) {
     return user.firstName + ' X ' + user.lastName;
 }
@@ -39,7 +39,7 @@ ReactDOM.render(
     element,
     document.getElementById("root")
 )
-//----------------------------------------------- 因为jsx本身最后会被babel转化为普通的js对象，所以可以在jsx语句中使用if for等等等
+// 因为jsx本身最后会被babel转化为普通的js对象，所以可以在jsx语句中使用if for等等等
 
 function getGreeting(user) {
   if (user) {
@@ -48,11 +48,11 @@ function getGreeting(user) {
   return <h1>Hello, Stranger.</h1>;
 }
 
-//-----------------------------------------------
+//
 
 const element1 = <div tabIndex="0"></div>;
 
-//----------------------------------------------- jsx还可嵌套
+//jsx还可嵌套
 const element2 = <img src={user.avatarUrl} />;
 
 const element3 = (
@@ -62,19 +62,32 @@ const element3 = (
   </div>
 );
 
-//----------------------------------------------------- jsx防注入攻击 可以jsx中使用用户输入
+//jsx防注入攻击 可以jsx中使用用户输入
 
 // const title = response.potentiallyMaliciousInput;
 // const element5 = <h1>{title}</h1>;
 
 //------------------------------------------------- jsx代表objects 等同于react元素 具体参考react文档
 
+
+
+
+
+
+
+//--------------------------------------------------------
+
+
+
+
+
+
 //---------------------------------------------------元素渲染 利用ReactDOM.render()
 
 const element6 = <h1>Hello, world</h1>;
 ReactDOM.render(element6, document.getElementById('root'));
 
-//-------------------------------------------------------更新元素渲染 react元素都是不可变的 可以使用计时器来定期改变html
+//更新元素渲染 react元素都是不可变的 可以使用计时器来定期改变html (这里就利用了虚拟dom，只进行了dom最终改变的变化)
 
 function tick() {
   const element7 = (
@@ -86,6 +99,125 @@ function tick() {
   ReactDOM.render(element7, document.getElementById('root'));
 }
 
-setInterval(tick, 1000);
+
+//---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------组件&props
+//函数定义组件
+function Welcome(props){
+  return <h1>你好，{props.name}</h1>
+}
+//类定义组件 它拥有一些额外的特性
+class Welcome1 extends React.Component{
+  render(){
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+//组件渲染 
+function Welcome2(props){
+  return <h1>Hello,{props.name}</h1>
+}
+const element9 = <Welcome2 name="x" />//组件名称必须是大写字母开头 小写字母开头的话就表示一个dom标签
+ReactDOM.render(
+  element9,
+  document.getElementById('root')
+)
+//组合组件 即组件嵌套
+function Welcome5(props){
+  return <h1>Hello,{props.name}</h1>
+}
+function App(){
+  return (
+    <div>
+      <Welcome5 name="x" />
+      <Welcome5 name="wp" />  
+    </div>
+  )
+}
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
+//提取组件 个人理解为稍微复杂一点的组件嵌套 组件分离开来，更好的可读性，与可维护性
+function Comment(props){
+  return (
+      <div className="Comment">
+        <UserInfo user={props.author} />
+        <div className="Comment-text">
+          {props.text}
+        </div>
+        <div className="Comment-date">
+          {formatDate(props.date)}
+        </div>
+      </div>  
+    )
+}
+function Avatar(props){
+  return (
+    <img className="Avatar"
+         src={props.user.avatarUrl}
+         alt={props.user.name}
+    />  
+  )
+}
+function UserInfo(props){
+  return (
+    <div className = "UserInfo">
+        <Avatar user={props.user} />
+        <div className="UserInfo-name">
+          {props.user.name}
+        </div>
+    </div>
+  )
+}//props 只读
+//----------------------------------------------------------------------
+
+
+
+
+
+
+//---------------------------------------------------------------------state & 生命周期
+// 类组件可以增添状态 （函数组件是不可以的）可以用于解决类似与时钟的问题
+class Clock extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {date: new Date()} //可以有多个状态，但是可以独立的更新他们
+  }
+  componentDidMount(){//组件挂载时 执行的方法 每当Clock组件第一次加载到DOM中的时候，我们都想生成定时器，这在React中被称为挂载--生命周期钩子
+    this.timerID = setInterval(() => {
+      this.tick()
+    }, 1000);
+  }
+  componentWillUnmount(){//组件被卸载时执行  同样，每当Clock生成的这个DOM被移除的时候，我们也会想要清除定时器，这在React中被称为卸载。--同上
+    clearInterval(this.timerID);
+  }
+  tick(){
+    this.setState({ //this.setState() 来更新组件局部状态： 不要直接更新状态：this.state.comment = 'Hello'; 要使用setState
+      date: new Date()
+    })
+  }
+  render(){
+    return(
+      <div>
+        <h1>Hello.xwp</h1>
+        <h2>it is {this.state.date.toLocaleTimeString()}</h2>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
 </script>
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>空之轨迹OL</title>
+    <meta name="keywords" content="空之轨迹OL,空之轨迹" />
+    <meta name="description" content="日本国民级RPG厂商Falcom的经典单机游戏，轨迹系列全新之作《空之轨迹OL》，即将正式推出！动人心魄的全新剧情，全系列人气角色强势集结，一脉相承策略回合制系统，日本超一线声优加盟，高自由度的导力器合成系统，将为你带来科技与魔法的全新体验！" />
+    <meta content="width=750,minimum-scale=0,maximum-scale=5,user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="author" content="Design:sunlei; Web Layout:wenpeng;" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+
+</head>
+<body>
+    <div class="big_div">
+        <a href="" class="nav"></a>
+        <a href="" class="xwp_img"><img src="./img/button.png" alt="" ></a> 
+        <div class="xwp_lunone" class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><img src="img/tidan_02.png" alt=""></li>
+                <li class="swiper-slide"><img src="img/aisi_02.png" alt=""></li>
+            </ul>
+        </div>
+        <img src="./img/biaoti2_03.png" alt="" width="340px" class="xwp_img_2">
+        <div class="swiper-container lunbo2">
+                <div class="swiper-wrapper" onclick="xwp(event)">
+                        <div class="swiper-slide"><img src="img/5.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="img/1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="img/2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="img/3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="img/4.jpg" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="prev"><img src="img/prev.png" alt=""></div>
+                <div class="next"><img src="img/next.png" alt=""></div>
+    
+        </div>
+        <div class="xwp_reping">
+        </div>
+        <a href="" class="xwp_img_3"><img src="./img/button.png" alt="" ></a> 
+        <div class="xwp_zheyan">
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+    new Swiper(".xwp_lunone", {
+            onClick : function(swiper) {
+            },
+            loop : true,
+            autoplay: 3000,//可选选项，自动滑动
+        });
+        //图片滑动
+        var num_video = $(".feature li").length;
+        if (num_video > 1) {
+            var video = new Swiper(".feature .box", {
+                paginationClickable : true,
+                pagination : ".events_nav",
+                prevButton : '.feature .prev',
+                nextButton : '.feature .next',
+                onClick : function(swiper) {
+                },
+                loop : true
+            });
+        }
+    //经典特色玩法
+    var swiper = new Swiper('.lunbo2', {
+      initialSlide: 1,
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows : true,
+      },
+      pagination: '.swiper-pagination',
+      paginationClickable: true,      
+      prevButton: ".prev",
+      nextButton: ".next",
+    });
+
+    //自定义遮掩层
+    function xwp(event){
+        if (event.path[0].currentSrc) {
+            var bigdiv = "<div class='quanping' onclick='qingkong()'><img src='"+event.path[0].currentSrc+"'></div><div class='xwp_black' onclick='qingkong()'></div>"
+            document.querySelector(".xwp_zheyan").innerHTML = bigdiv        
+        }else{
+            return
+        }
+    }
+    function qingkong(){
+        document.querySelector(".xwp_zheyan").innerHTML = null
+    }
+</script>
+</html>
