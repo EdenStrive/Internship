@@ -17,9 +17,14 @@
 	<link href="css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="css/index.css?v3" rel="stylesheet" type="text/css" />
 	<link href="css/animate.css" rel="stylesheet" type="text/css" />
-	<!--#include virtual="inc/viewport.shtml"-->		
-</head>
-
+	<script>
+			if(navigator.appVersion.indexOf('Android') != -1){
+				document.addEventListener("DOMContentLoaded",function(e){
+					document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+				});
+			};
+		</script>
+	</head>
 <body>
 	<!--#include virtual="inc/top.shtml"-->
 	<div class="bg1">
@@ -124,8 +129,8 @@
 		</ul>
 	</div>
 	<div class="bottom">
-			<p class="company">北京爱游盟信息科技有限公司</p>
-			<p class="j_code">京ICP备17024188号-1</p>
+			<p class="company">北京畅游时代数码技术有限公司</p>
+			<p class="j_code"></p>
 			<p class="company"></p>
 			<p class="company"></p>
 		</div>

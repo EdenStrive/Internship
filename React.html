@@ -219,5 +219,220 @@ ReactDOM.render(
   <Clock />,
   document.getElementById('root')
 );
+//-----------------------------------------------------------------
+
+
+
+
+//------------------------------------------------------------------事件处理
+class Button extends React.Component{ //一个按钮组件
+  constructor(){
+    super()
+  }
+  render(){//事件处理绑定属性的命名采用驼峰式写法，同时方法名要包裹在{}中
+    <button onClick={activateLasers}>
+      Activate Lasers
+    </button>
+  }
+}
+//react中阻止默认事件的方法为 preventDefault()  不可以使用return false的方法
+
+//在react中你不需要使用addEventListener
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+//--事件传参
+// <button onClick = {(e)=>this.deleteRow(id,e)}>dele</button>
+// <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+
+//--------------------------------------------------------------------------
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------条件渲染
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sign up.瓜娃子</h1>;
+}
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+
+
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  );
+}
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  );
+}
+//可以使用变量来储存dom元素（jsx）
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+
+    let button = null;
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;//可以使用变量来储存dom元素（jsx）
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />;
+    }
+
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <LoginControl />,
+  document.getElementById('root')
+);
+
+//与运算法 && 你可以通过用花括号包裹代码在 JSX 中嵌入任何表达式 ，也包括 JavaScript 的逻辑与 &&，它可以方便地条件渲染一个元素。 在 JavaScript 中，true && expression 总是返回 expression，而 false && expression 总是返回 false。
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+ReactDOM.render(
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
+);
+//三目运算符
+
+// render() {
+//   const isLoggedIn = this.state.isLoggedIn;
+//   return (
+//     <div>
+//       The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+//     </div>
+//   );
+// }
+// 同样它也可以用在较大的表达式中，虽然不太直观：
+
+// render() {
+//   const isLoggedIn = this.state.isLoggedIn;
+//   return (
+//     <div>
+//       {isLoggedIn ? (
+//         <LogoutButton onClick={this.handleLogoutClick} />
+//       ) : (
+//         <LoginButton onClick={this.handleLoginClick} />
+//       )}
+//     </div>
+//   );
+// }
+
+//阻止组件渲染
+// 在极少数情况下，你可能希望隐藏组件，即使它被其他组件渲染。让 render 方法返回 null 而不是它的渲染结果即可实现。
+
+// 在下面的例子中，<WarningBanner /> 根据属性 warn 的值条件渲染。如果 warn 的值是 false，则组件不会渲染：
+
+// function WarningBanner(props) {
+//   if (!props.warn) {
+//     return null;
+//   }
+
+//   return (
+//     <div className="warning">
+//       Warning!
+//     </div>
+//   );
+// }
+//------------------------------------------------------------------------------
+
+
+
+
+//-----------------------------------------------------------------------------列表 & keys
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+    </li>
+);
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+
+
 </script>
 </html>
