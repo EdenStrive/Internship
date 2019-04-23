@@ -11,9 +11,9 @@ li{
 }
 .big_div{
     position: relative;
-    background-image: url("../img/bg.jpg");
+    background: url("../img/bg.jpg") no-repeat;
     width: 750px;
-    height: 4062px;
+    height: 4167px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,3 +127,13 @@ li{
     opacity: 0.7;
     z-index: 1000;
 }
+.xwp_dibu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 1260px;
+    width: 750px;
+    font-size: 26px
+}
+

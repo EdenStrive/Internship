@@ -17,8 +17,6 @@ module.exports = {
 
 //webpack-dev-server生成的js文件是放在内存中的，并没有放在物理磁盘上 但是我们可以理解为隐形的main.js
 
-
-
 //目前不行 es6的api 不是node的api
 // export default{
 
