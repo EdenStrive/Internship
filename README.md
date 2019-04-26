@@ -15,7 +15,7 @@ github仓库主要包括内容
 
 - [x] 每日精进
 
-### 3. 高亮一段代码[^code]
+### 3. 高亮一段代码[^code] 
 
 ```javascript
 console.log("Hello world!");
@@ -26,6 +26,6 @@ console.log("Hello world!");
 
     > * 更新webpack
     
-2019-04-25
+2019-04-26
 
     > * 更新React.html 里面包括react中的所有的主要概念
