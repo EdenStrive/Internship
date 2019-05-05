@@ -6,7 +6,7 @@ github仓库主要包括内容
 
 > * 手机端适配
 > * 落地页批量处理
-> * react
+> * react —— react官方文档主要概念以及高级指引
 > * webpack+react
 
 
