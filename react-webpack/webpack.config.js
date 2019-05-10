@@ -17,6 +17,12 @@ module.exports = {
         rules:[ //第三方规则
             {test: /\.js|jsx$/,use:'babel-loader',exclude:/node_modules/},//千万别忘记添加exclude排除项
         ]
+    },
+    resolve:{
+        extensions:['.js','.jsx','.json'],//表示，引入这几个文件的后缀名，可以省略不写
+        alias:{
+            "@":path.join(__dirname,'./src') //这样在 @就表示src目录
+        }
     }
 }
 
