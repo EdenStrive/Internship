@@ -9,7 +9,8 @@ const
 Div = styled.div`
     width:100%;
     min-width:1300px;
-    min-height:100px;
+    overflow: hidden;
+    min-height:1000px;
     position: relative;
     display:flex;
     flex-direction:column;
@@ -19,7 +20,7 @@ Img = styled.img`
     width:100%;
     position: absolute;
     z-index:-1;
-    top:-80px
+    top:-110px
 `,
 Idiv= styled.div`
     width: 750px;
@@ -48,8 +49,16 @@ index_p = {
 },
 blue = {
     display:"inline-block",
-    borderBottom:"1px solid rgb(46, 43, 141)"
-}
+    borderBottom:"2px solid rgb(142, 139, 243)"
+},
+Idiv_1 = styled.div`
+    width:120%;
+    height:200px;
+    background: rgb(242,242,242);
+    transform: rotate(-5deg);
+    position: absolute;
+    top:880px;
+`
 
 
 class Index extends React.Component{
@@ -59,11 +68,12 @@ class Index extends React.Component{
                 <GlobalStyle />  {/*前台全局css样式*/}
                 <Img src="../../static/img/bg_index.jpg" alt=""/>  {/* 页面背景图片 */}
                 <Nav></Nav>  {/* 导航 */}
-                <Idiv>
+                <Idiv>{/*第一部分*/}
                     <p style={index_p}>Welcome To My Personal Blog</p>
                     <Span>Leave me more <div style={blue}>messages~</div></Span>
-                    <Button type="primary" style={index_button}>Entry</Button>                
+                    <Button type="primary" style={index_button}>Entry</Button>      
                 </Idiv>
+                <Idiv_1></Idiv_1>          
             </Div>
         )
     }

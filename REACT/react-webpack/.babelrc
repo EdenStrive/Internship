@@ -1,0 +1,4 @@
+{
+    "presets": ["env","stage-0","react","es2015"],//预设
+    "plugins": ["transform-runtime"]//插件
+}
