@@ -23,7 +23,7 @@ let query = (sql, values) => {
                         console.log(rows)
                         resolve(rows)
                     }
-                    connection.end()
+                    // connection.end() //什么时候关闭请求
                 })
             }
         })

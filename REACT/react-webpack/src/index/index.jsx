@@ -3,6 +3,7 @@ import Nav from '../components/nav/nav'
 import { GlobalStyle } from '../../static/css/style' //引用的全局变量
 import styled from 'styled-components'
 import { Button } from "antd";
+import { getIntroduce } from  '../../request/request'
 import "antd/dist/antd.css";
 //--------------------css
 const
@@ -63,6 +64,7 @@ Idiv_1 = styled.div`
 
 class Index extends React.Component{
     render(){
+        getIntroduce()
         return(
             <Div>
                 <GlobalStyle />  {/*前台全局css样式*/}
