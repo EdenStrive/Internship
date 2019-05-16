@@ -34,7 +34,7 @@ console.log("Hello world!!");
 
     > * 更新koa server，搭建后端服务
 
-2019-05-116
+2019-05-16
 
-    > * 我自己写的手机预约页面：http://mevent.cy.com/wjhy/20190516/m/hw/index.html
+    > * 我自己写的手机预约页面：[ 点击跳转浏览 ]( http://mevent.cy.com/wjhy/20190516/m/hw/index.html )
     
