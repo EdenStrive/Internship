@@ -10,7 +10,6 @@ var pool  = mysql.createPool({
 });
 
 let query = (sql, values) => {
-    
     return new Promise((resolve, reject) => {
         pool.getConnection((err, connection) => {
             if (err) {
@@ -20,10 +19,10 @@ let query = (sql, values) => {
                     if (err) {
                         reject(err)
                     } else {
-                        console.log(rows)
+                        // console.log(rows)
                         resolve(rows)
                     }
-                    // connection.end() //什么时候关闭请求
+                    connection.release() //什么时候关闭请求
                 })
             }
         })
