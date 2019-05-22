@@ -6,6 +6,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
     template: path.join(__dirname,'./index.html'),
     filename: 'index.html'
 })
+
+
+
 //webpack默认只能够打包处理.js后缀名类型的文件；像png css vue无法主动处理。所以需要配置第三方的loader
 module.exports = {
     mode:'development',//development 生产环境（调试环境） production 产品环境 此选项为必选项

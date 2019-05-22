@@ -1,0 +1,33 @@
+.big_div{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: 15px;
+    border-radius: 5px;
+}
+.div_2{
+    position: relative;
+    width: 50%;
+    background-color: rgba(242, 242, 242);
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 30px;
+    margin-left: 10px;
+    border: 1px solid rgb(242, 242, 242);
+}
+.div_2 h2{
+    position: relative;
+    top: 20px;
+    height: 42px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.5);
+    font-size:28px
+}
+.Ineirong{
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 93%;
+    height: 300px;
+    overflow: hidden;
+}

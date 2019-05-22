@@ -1,0 +1,41 @@
+.div_f1{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    height: 265px;
+}
+.foo_fun{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 142px;
+    top: 59px;
+    margin-left: 14%;
+}
+.foo_fun a{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 10px
+}
+.foo_fun a:nth-child(1){
+    display: inline-block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: auto;
+}
+.div_f2{
+    display: flex;
+    flex-direction: row;
+}
+.foo_ico{
+    position: relative;
+    left: 419px;
+    top: 91px;
+}
+.div_f1 p{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    top: 107px;
+    left: 23%;
+}

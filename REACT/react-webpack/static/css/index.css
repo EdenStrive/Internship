@@ -1,0 +1,38 @@
+.div_1{
+    width:120%;
+    height:200px;
+    background: rgb(242,242,242);
+    transform: rotate(-5deg);
+    position: relative;
+    top: 489px;
+}
+.bowen{
+    position:relative;
+    width:100%;
+    background-color:rgb(242,242,242);
+    height: 568px;
+    top:373px;  
+    display:flex;
+    flex-direction:column;
+    align-items: center
+}
+@media screen and (max-width:1625px){
+    .div_1{
+        width: 120%;
+        height: 227px;
+        background: rgb(242,242,242);
+        transform: rotate(-5deg);
+        position: relative;
+        top: 357px;    
+    }
+    .bowen{
+        position: relative;
+        width: 100%;
+        background-color: rgb(242,242,242);
+        height: 568px;
+        top: 289px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
