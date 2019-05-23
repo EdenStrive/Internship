@@ -57,7 +57,7 @@ class Newest extends React.Component{
                     每个月会不定期的进行分享一个月以来的学习心得体会，点击导航栏Blog可以查看全部哦。有任何问题都可在后台进行留言QaQ。电子邮箱：1059951183@qq.com。
                 </p>
                 <div className="big_div">
-                    {this.state.article.length == 0? <Spin size="large" />: this.state.article} 
+                    {this.state.article.length == 0? <div className="loadings"><Spin size="large" /></div>: this.state.article} 
                 </div> 
             </Div>
         )

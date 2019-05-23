@@ -45,8 +45,19 @@ async function inserL(ctx){
     }).catch(err =>{
         console.log("点赞添加出错：".err)
     })
-
 }
+
+//获取最新的两篇博文
+async function newA(ctx){
+    let sql = "SELECT id,title,content,create_time FROM blog_article_detail where status=1 order by create_time desc limit 0 , 2"
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("错误",err) 
+    }) 
+} 
+
+
 
 //-----------------------------------------路由  
 module.exports = app => {
@@ -55,6 +66,7 @@ module.exports = app => {
     router.post('/like',like)
     router.get('/count',count)
     router.post('/inserL',inserL)
+    router.get('/newA',newA)
 
     app.use(router.routes()).use(router.allowedMethods());
 }
