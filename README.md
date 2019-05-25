@@ -39,4 +39,7 @@ console.log("Hello world!!");
 
     > * 我在公司写的手机预约页面：
    ————————[ 点击浏览查看 ]( http://mevent.cy.com/wjhy/20190516/m/hw/index.html )
-    
+  
+2019-05-22
+
+    > * 为博文nav组件更新函数节流
