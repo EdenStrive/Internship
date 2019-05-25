@@ -27,7 +27,7 @@ Idiv= styled.div`
     height: 300px;
     color:rgb(255,255,255);
     position:relative;
-    top:250px;
+    top:290px;
     text-align:center;
     font-size:45px;
     display:flex;
@@ -97,7 +97,7 @@ Idiv_3 = styled.div`
     background: rgb(255,255,255);
     transform: rotate(-5deg);
     position: relative;
-    top: 260px;
+    top: 360px;
 `,
 Idiv_4 = styled.div`
     width:120%;
@@ -105,7 +105,7 @@ Idiv_4 = styled.div`
     background: rgb(38,49,53);
     transform: rotate(-5deg);
     position: relative;
-    top: 285px;
+    top: 385px;
 `
 
 
@@ -200,9 +200,9 @@ class Index extends React.Component{
                         </Idiv_2>    
                     </div>    
                     <Idiv_3></Idiv_3>
-                    <Newest top = {"150px"}></Newest> {/*获取最新博文的组件。分离开，蹂杂在一起维护后期困难，传入子组件150px参数。表示相对定位的高度为150px*/}
+                    <Newest top = {"250px"}></Newest> {/*获取最新博文的组件。分离开，蹂杂在一起维护后期困难，传入子组件150px参数。表示相对定位的高度为150px*/}
                     <Idiv_4></Idiv_4>
-                    <Footer top = {"169px"}></Footer>
+                    <Footer top = {"269px"}></Footer>
             </div>
         )
     }

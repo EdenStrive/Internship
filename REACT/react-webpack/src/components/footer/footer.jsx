@@ -4,22 +4,24 @@ import { Icon } from 'antd'
 import "../../../static/css/footer.css"
 
 
+const Div = styled.div`
+    z-index: 100;
+    width: 100%;
+    position: relative;
+    background: rgb(38,49,53);
+    top: ${props => props.top};
+    height: 311px;        
+`
+
 class Footer extends React.Component{
     constructor(props){
         super(props);
     }
     render(){
-        //-------------------------------csss
-        const Div = styled.div`
-            z-index: 100;
-            width: 100%;
-            position: relative;
-            background: rgb(38,49,53);
-            top: ${this.props.top};
-            height: 311px;        
-        `
+        //-------------------------------css
+
         return(
-            <Div>
+            <Div top={this.props.top}>
                 <div className="div_f1">
                     <div className="div_f2">
                         <div className="foo_fun">

@@ -42,7 +42,7 @@ class Newest extends React.Component{
     render(){
         //-------------------------------csss
         const Div = styled.div`
-            z-index:100;
+            z-index:95;
             width:100%;
             display:flex;
             flex-direction:column;
