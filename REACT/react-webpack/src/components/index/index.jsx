@@ -1,13 +1,11 @@
 import React from 'react'
-import Nav from '../components/nav/nav' //头部nav组件
-import Newest from '../components/newest/newest' //最新博文组件
-import Footer from '../components/footer/footer'
-import { GlobalStyle } from '../../static/css/style' //引用的全局变量
+import Newest from '../newest/newest' //最新博文组件
+import Footer from '../footer/footer'
 import styled from 'styled-components'
 import { Button , Icon , message } from "antd";
-import { getIntroduce , getLike , getLnumber , inserLike } from  '../../request/request'
+import { getIntroduce , getLike , getLnumber , inserLike } from  '../../../request/request'
 import "antd/dist/antd.css";
-import "../../static/css/index.css"
+import "../../../static/css/index.css"
 //--------------------css
 const HeartSvg = () => (
     <svg width="1em" height="1em" fill="currentColor" viewBox="0 0 1024 1024">
@@ -52,7 +50,6 @@ blue = {
     borderBottom:"2px solid rgb(142, 139, 243)"
 },
 over = {
-    width:"100%",
     overflow: "hidden",
     minHeight:"2964px",
     minWidth:"1400px",
@@ -172,9 +169,7 @@ class Index extends React.Component{
             <div style={over}>
                     {this.state.message}
                     {/*提示*/}
-                    <GlobalStyle />  {/*前台全局css样式*/}
                     <Img src="../../static/img/bg_index.jpg" alt=""/>  {/* 页面背景图片 */}
-                    <Nav></Nav>  {/* 导航 */}
                     <Idiv>{/*第一部分*/}
                         <p style={index_p}>Welcome To My Personal Blog</p>
                         <Span>Leave me more <div style={blue}>messages~</div></Span>

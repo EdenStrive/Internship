@@ -1,5 +1,7 @@
 import React from 'react'
 import styled , { keyframes } from 'styled-components'
+import { GlobalStyle } from '../../static/css/style' //引用的全局变量
+import { Link } from "react-router-dom"
 //--------------------css
 const 
 nav_an = keyframes`
@@ -25,7 +27,11 @@ Li = styled.li`
     font-size:18px;
     width:130px;
     text-align:center;
-    opacity:0.8
+    color:rgb(255,255,255);
+    opacity:0.8;
+    &:hover {
+        color: #1890ff;
+    }
 `,
 INav = styled.nav`
     display: flex;
@@ -88,14 +94,19 @@ class Nav extends React.Component{
     }
     render(){
         return(
-            <INav animation = {this.state.an_name}>
-                <Li><span>Eden</span></Li>
-                <Ndiv>
-                    <Li><span>Blog</span></Li>
-                    <Li><span>Sign in</span></Li>
-                    <Li><span>Sign up</span></Li>
-                </Ndiv>
-            </INav>
+            <div>
+                <INav animation = {this.state.an_name}>
+                    <Li><span>Eden</span></Li>
+                    <Ndiv>
+                        <Link to="/blog"><Li><span>Blog</span></Li></Link>
+                        <Li><span>Sign in</span></Li>
+                        <Li><span>Sign up</span></Li>
+                    </Ndiv>
+                </INav>
+                <GlobalStyle />  {/*前台全局css样式*/}
+                {/* 路由每次更改此Children */}
+                {this.props.children} 
+            </div>
         )
     }
 }
