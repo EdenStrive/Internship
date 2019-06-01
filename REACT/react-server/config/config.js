@@ -4,7 +4,7 @@ const config = {
         USERNAME:"root",
         PASSWORD:"nmsl",
         PORT:3306,
-        HOST:"119.29.183.3"
+        HOST:""
     }
 }
 module.exports = config
