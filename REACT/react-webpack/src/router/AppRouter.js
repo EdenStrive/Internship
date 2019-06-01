@@ -8,7 +8,7 @@ class AppRouter extends React.Component{
         return(
             <BrowserRouter>
                 <Nav>
-                <SubRouter />
+                    <SubRouter />
                 </Nav>
             </BrowserRouter>
         )

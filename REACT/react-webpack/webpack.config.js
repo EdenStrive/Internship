@@ -19,7 +19,8 @@ module.exports = {
     module:{ //所有第三方模块的配置规则
         rules:[ //第三方规则
             {test: /\.js|jsx$/,use:'babel-loader',exclude:/node_modules/},//千万别忘记添加exclude排除项
-            {test:/\.css$/,use:['style-loader','css-loader']}
+            {test:/\.css$/,use:['style-loader','css-loader']},
+            {test:/\.(png|jpg|jepg|gif)$/,use:[ { loader:"url-loader", options:{ limit:50000 }}] }//对引入js文件的图片进行加载处理
         ]
     },
     resolve:{

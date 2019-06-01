@@ -2,14 +2,14 @@
     width: 60%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between ;
     position: relative;
     top: 15px;
     border-radius: 5px;
 }
 .div_2{
     position: relative;
-    width: 50%;
+    width: 47%;
     background-color: rgba(242, 242, 242);
     border-radius: 5px;
     padding-left: 20px;
@@ -33,4 +33,6 @@
 }
 .loadings{
     height: 735.8px;
+    position: relative;
+    left: 558px;
 }

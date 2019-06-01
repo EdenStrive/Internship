@@ -25,4 +25,17 @@ const inserLike = (ip,position) =>{
 //获取首页两票博文
 const getNarticle = ()=> axios.get(host + "/newA");
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle}
+//获取博文总数-用于分页
+const getTotal = () => axios.get(host+'/total')
+
+//博文页 one
+const getBlogone = (start , end) =>{
+    return axios.get(host+'/blogOne',{
+        params:{
+            start:start,
+            end:end
+        }
+    })
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone}

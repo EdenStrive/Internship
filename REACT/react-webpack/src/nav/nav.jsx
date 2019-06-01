@@ -96,7 +96,7 @@ class Nav extends React.Component{
         return(
             <div>
                 <INav animation = {this.state.an_name}>
-                    <Li><span>Eden</span></Li>
+                <Link to="/"><Li><span>Eden</span></Li></Link>
                     <Ndiv>
                         <Link to="/blog"><Li><span>Blog</span></Li></Link>
                         <Li><span>Sign in</span></Li>

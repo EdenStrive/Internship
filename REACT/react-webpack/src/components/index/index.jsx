@@ -53,7 +53,6 @@ over = {
     overflow: "hidden",
     minHeight:"2964px",
     minWidth:"1400px",
-    maxWidth:"1900px",
     display:"flex",
     flexDirection:"column",
     alignItems: "center",
@@ -85,17 +84,9 @@ icons={
     top:"20px"
 },
 contents = {
-    top: "20px",
+    top: "-23px",
     left:"38px"
 },
-Idiv_3 = styled.div`
-    width:120%;
-    height:200px;
-    background: rgb(255,255,255);
-    transform: rotate(-5deg);
-    position: relative;
-    top: 360px;
-`,
 Idiv_4 = styled.div`
     width:120%;
     height:200px;
@@ -118,6 +109,7 @@ class Index extends React.Component{
         }
     }
     componentDidMount(){ //render后初始化部分请求
+        scrollTo(0,0)//回到页面顶部
         //查询博文介绍
         getIntroduce() 
             .then((res) =>{
@@ -181,7 +173,7 @@ class Index extends React.Component{
                             <Icon type="smile" theme="twoTone" style={icons}/>                            
                             <ISpan style={{color: "#9191de"}}>{this.state.introduce.title}</ISpan><br/>
                             <ISpan style={contents}>{this.state.introduce.content}</ISpan>  
-                            <div style={{position: "relative", top:"35px",fontSize:" 23px",left: "86%"}}>
+                            <div style={{position: "relative", top:"0px",fontSize:" 23px",left: "84%"}}>
                                 <div style={{display:"inline-block"}}>
                                 {this.state.likeI}&nbsp;&nbsp;&nbsp;
                                 </div>
@@ -194,7 +186,7 @@ class Index extends React.Component{
                             </div>
                         </Idiv_2>    
                     </div>    
-                    <Idiv_3></Idiv_3>
+                    <div className = "Idiv_3"></div>
                     <Newest top = {"250px"}></Newest> {/*获取最新博文的组件。分离开，蹂杂在一起维护后期困难，传入子组件150px参数。表示相对定位的高度为150px*/}
                     <Idiv_4></Idiv_4>
                     <Footer top = {"269px"}></Footer>
