@@ -11,8 +11,13 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 //webpack默认只能够打包处理.js后缀名类型的文件；像png css vue无法主动处理。所以需要配置第三方的loader
 module.exports = {
-    mode:'development',//development 生产环境（调试环境） production 产品环境 此选项为必选项
+    mode:'production',//development 生产环境（调试环境） production 产品环境 此选项为必选项
     //在webpack 4.x，默认的打包入口文件是src->index.js 3.x需要自己配置同时一般为main.js ,4.x默认了打包的入口和输出文件 
+    output: {
+        publicPath:'/', //打包的js文件script从根路径进行定位 这个很重要，因为和react-router有时会有冲突（二级导航页时）
+        filename: 'main.js',
+        path: __dirname + '/dist'
+    },
     plugins:[
         htmlPlugin
     ],
@@ -20,7 +25,7 @@ module.exports = {
         rules:[ //第三方规则
             {test: /\.js|jsx$/,use:'babel-loader',exclude:/node_modules/},//千万别忘记添加exclude排除项
             {test:/\.css$/,use:['style-loader','css-loader']},
-            {test:/\.(png|jpg|jepg|gif)$/,use:[ { loader:"url-loader", options:{ limit:50000 }}] }//对引入js文件的图片进行加载处理
+            {test:/\.(png|jpg|jepg|gif)$/,use:[ { loader:"url-loader"}] }//对引入js文件的图片进行加载处理
         ]
     },
     resolve:{

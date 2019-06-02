@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Spin } from 'antd';
 import { getNarticle } from  '../../../request/request'
 import "../../../static/css/newest.css"
+import {withRouter} from "react-router-dom";
 
 const
 titleB = {
@@ -26,7 +27,7 @@ class Newest extends React.Component{
                 nartic.forEach((arc,id) => {
                     let child = (<div className="div_2" key={arc.id}>
                                     <img src={this.imgsrc(id)} alt="" style={{width:"95%",borderRadius:"10px",height:"305.89px"}} />
-                                    <h2><u style={titleB}>{arc.title}</u></h2><br/>
+                                    <h2 style={titleB} onClick={this.detail.bind(this,arc.id)}>{arc.title}</h2><br/>
                                     <span>{arc.create_time}</span>
                                     <div className="Ineirong" dangerouslySetInnerHTML={{__html:arc.content}} ></div>
                                 </div>)
@@ -43,6 +44,10 @@ class Newest extends React.Component{
     imgsrc(id){ //当自定义的原型方法以
         let x = "./../../static/img/article_"+id+".jpg"
         return x
+    }
+    detail(id){
+        let ids = id
+        this.props.history.push("/detail/"+ids);
     }
     render(){
         //-------------------------------csss
@@ -68,4 +73,4 @@ class Newest extends React.Component{
         )
     }
 }
-export default Newest
+export default withRouter(Newest)

@@ -18,7 +18,7 @@
     width: 1920px;
     height: 2690px;
     left: -360px;
-    background:url("../img/blog.jpg") no-repeat center top;
+    background:url("/static/img/blog_9.jpg") no-repeat center top;
     background-size: 1920px 2800px; 
     overflow: hidden;
 }

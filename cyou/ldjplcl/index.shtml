@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>《鹿鼎记》手游官方网站-预约全面开启！梦回鹿鼎，开心要紧！</title>
+	<meta name="keywords" content="鹿鼎记,鹿鼎,鹿鼎记ol,鹿鼎记手游,武侠,游戏,金庸,MMO,韦小宝,鹿鼎记陈小春版,鹿鼎记张卫健版,鹿鼎记周星驰版" />
+	<meta name="description" content="2019开年MMO大作《鹿鼎记》官方正版手游，以金庸封笔之作为蓝本，用大开脑洞的玩法呈现非传统的、接地气的3D市井江湖。游戏预约现已全面开放！" />
+	<meta content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="author" content="Design:sunlei; Web Layout:zhidong;" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<link href="css/common.css?v3" rel="stylesheet" type="text/css" />
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/index.css?v3" rel="stylesheet" type="text/css" />
+	<link href="css/animate.css" rel="stylesheet" type="text/css" />
+	<script>
+			if(navigator.appVersion.indexOf('Android') != -1){
+				document.addEventListener("DOMContentLoaded",function(e){
+					document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+				});
+			};
+		</script>
+	</head>
+<body>
+	<!--#include virtual="inc/top.shtml"-->
+	<div class="bg1">
+		<audio src="http://files2.changyou.com/vc/ldjsy/yangzhou.mp3" loop id="music" autoplay="autoplay"></audio>
+		<div id='musicBtn' class="music"></div>
+
+		<div class="banner-t  animated flipInX"></div>
+		<!--<div class="banner-time">10月18日首测</div>-->
+		<a href="javascript:;" class="ljxz-btn" title="立即下载"></a>
+	</div>
+
+	<div class="bg3">
+		<div class="swiper2">
+			<div id="J_swiper2" class="swiper-container1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-1.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-2.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-3.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-4.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-5.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-6.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-7.png" alt=""></div>
+					<div class="swiper-slide"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/icon1-8.png" alt=""></div>
+				</div>
+			</div>
+			<div class="pagination2"></div>
+			<!--<div class="swiper-button-prev"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/prev.png" alt="上一页"></div>-->
+			<!--<div class="swiper-button-next"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/next.png" alt="下一页"></div>-->
+		</div>
+	</div>
+	<div class="bg2">
+		<div class="swiper">
+			<div id="J_swiper" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="img/0.png" alt=""></div>
+					<div class="swiper-slide"><img src="img/1.png" alt=""></div>
+					<div class="swiper-slide"><img src="img/2.png" alt=""></div>
+					<div class="swiper-slide"><img src="img/3.png" alt=""></div>
+					<div class="swiper-slide"><img src="img/4.png" alt=""></div>
+					<div class="swiper-slide"><img src="img/5.png" alt=""></div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-button-prev"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/prev1.png" alt="上一页"></div>
+			<div class="swiper-button-next"><img src="//i0.cy.com/ldjsy/mobile/2019/0104/next1.png" alt="下一页"></div>
+		</div>
+	</div>
+	<div class="bg4">
+		<ul class="new_box">
+			<li>
+				<div class="rp1">
+					<p class="rp_desc">“2011年玩鹿鼎记的时候我还在上大学，现在我已经结婚生子有了二胎。终于要出手游了，我已经迫不及待！”</p>
+					<p class="rp_desc2">
+						<span class="date">5分钟前</span>
+						<span class="revert">
+							<i class="icon_zan"></i>
+							<strong class="zan_num">(815)</strong>
+							<strong class="huifu">回复</strong>
+						</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div class="rp2">
+					<p class="rp_desc">“还记得胡歌的主题曲，记得天天采矿挖药刷副本聊YY，我想和当年的小伙伴们，在手游里延续那份回忆！”</p>
+					<p class="rp_desc2">
+						<span class="date">6分钟前</span>
+						<span class="revert">
+							<i class="icon_zan"></i>
+							<strong class="zan_num">(172)</strong>
+							<strong class="huifu">回复</strong>
+						</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div class="rp3">
+					<p class="rp_desc">“我从小就看金庸，身为00后却有武侠情怀。金大侠已经不在了，希望能在手游里找到原著的那份洒脱和快乐！”</p>
+					<p class="rp_desc2">
+						<span class="date">6分钟前</span>
+						<span class="revert">
+							<i class="icon_zan"></i>
+							<strong class="zan_num">(98)</strong>
+							<strong class="huifu">回复</strong>
+						</span>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div class="rp4">
+					<p class="rp_desc">“早就玩腻了一成不变的升级打怪做大侠，所以能像韦小宝一样在鹿鼎记里逛街听曲耍流氓，让人眼前一亮！”</p>
+					<p class="rp_desc2">
+						<span class="date">7分钟前</span>
+						<span class="revert">
+							<i class="icon_zan"></i>
+							<strong class="zan_num">(726)</strong>
+							<strong class="huifu">回复</strong>
+						</span>
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="bottom">
+			<p class="company">北京畅游时代数码技术有限公司</p>
+			<p class="j_code"></p>
+			<p class="company"></p>
+			<p class="company"></p>
+		</div>
+
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<!--<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>-->
+	<script type="text/javascript" src="js/swiper.3.4.1.js"></script>
+	<script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+
+		//sw1
+		var swiper = new Swiper('#J_swiper', {
+			effect: "coverflow",
+			centeredSlides: !0,
+			slidesPerView: 'auto',
+			//			autoplay:3500,
+			slidesPerview: 'auto',
+			loop: !0,
+			prevButton: ".swiper-button-prev",
+			nextButton: ".swiper-button-next",
+			coverflow: { rotate: 0, stretch: 80, depth: 500, modifier: 1, slideShadows: true },
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+		});
+
+		var swiper1 = new Swiper('.swiper-container1', {
+			pagination: '.pagination2',
+			paginationClickable: '.pagination2',
+			loop: true
+		});
+		var swiper2 = new Swiper('.swiper-container2', {
+			pagination: '.swiper-pagination3',
+			paginationClickable: '.swiper-pagination3',
+			loop: true
+		});
+	</script>
+<!--#include virtual="/inc/dma.html"-->
+</body>
+
+</html>

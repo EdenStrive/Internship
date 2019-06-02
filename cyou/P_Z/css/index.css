@@ -1,0 +1,292 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+video::-webkit-media-controls-fullscreen-button {
+	display: none !important;
+}
+.body{
+    width: 640px;
+}
+.div_1{
+    height: 1130px;
+    background: url("../img/body_1.jpg");
+    background-repeat:no-repeat;
+}
+.div_2{
+    height: 509px;
+    width: 640px;
+    overflow: hidden;
+    background: url("../img/body_2.jpg") no-repeat
+}
+.div_2_img{
+    position: relative;
+    top: 120px;
+    left: -600px;
+    animation-name:need; 
+    animation-duration:1s;
+    animation-timing-function:ease-out;
+    animation-fill-mode:forwards;
+    -webkit-animation-name: need; 
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-duration:1s;
+    -webkit-animation-fill-mode:forwards;
+}
+.div_3{
+    height: 952px;
+    background: url("../img/body_3.jpg") no-repeat;
+    overflow: hidden;
+}
+.div_3_img{
+    position: relative;
+    top: 90px;
+    animation-name:need; 
+    animation-duration:1s;
+    right: 900px;
+    animation-timing-function:ease-out;
+    animation-fill-mode:forwards;
+    -webkit-animation-name: need; 
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-duration:1s;
+    -webkit-animation-fill-mode:forwards;
+}
+.div_3_img2{
+    position: relative;
+    top: 80px;
+    left: 640px;
+    animation-name:need; 
+    animation-duration:1s;
+    animation-timing-function:ease-out;
+    animation-fill-mode:forwards;
+    -webkit-animation-name: need; 
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-duration:1s;
+    -webkit-animation-fill-mode:forwards;
+}
+.div_4{
+    height: 470px;
+    background: url("../img/body_4.jpg") no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_5{
+    height: 752px;
+    background: url("../img/body_5.jpg") no-repeat
+}
+.div_6{
+    height: 617px;
+    background: url("../img/body_6.jpg") no-repeat
+}
+.lunbo1{
+    position: relative;
+    width: 640px;
+    top: 85px;
+}
+.lunbo1 .swiper-pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -2px;}
+.lunbo1 .swiper-pagination span{
+    display: block;
+    height: 111px;
+    width: 120px;
+    z-index: 100;
+}
+.lunbo2 .swiper-pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -70px
+}
+.lunbo2 .swiper-pagination span{
+    display: block;
+    height: 26px;
+    width: 24px;
+    z-index: 100;
+    margin-left: 20px;
+    margin-right: 20px
+}
+.swiper-slide{
+    height: 505px;
+}
+.lunbo1 .thisNull:nth-child(1) { 
+    background: url("../img/1_uh.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(1).in { 
+    background: url("../img/1_h.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(2) { 
+    background: url("../img/2_uh.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(2).in { 
+    background: url("../img/2_h.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(3) { 
+    background: url("../img/3_uh.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(3).in { 
+    background: url("../img/3_h.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(4) { 
+    background: url("../img/4_uh.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(4).in { 
+    background: url("../img/4_h.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(5) { 
+    background: url("../img/5_uh.png") no-repeat center;
+}
+.lunbo1 .thisNull:nth-child(5).in { 
+    background: url("../img/5_h.png") no-repeat center;
+}
+
+
+.lunbo2 .thisNull{ 
+    background: url("../img/dian_uh.png") no-repeat center;
+}
+.lunbo2 .thisNull.in { 
+    background: url("../img/dian_h.png") no-repeat center;
+}
+
+.lunbo2 {
+    position: relative;
+    top: 100px;
+}
+
+.lunbo2 .swiper-slide img{
+    width: 550px;
+}
+.lunbo2 .swiper-wrapper .swiper-slide{
+    text-align: center;
+    height: 310px;
+    width: 300px;
+}
+.swiper-prev{
+    display: block;
+    position: relative;
+    top: -169px;
+    z-index: 100;
+    left: 10px;
+}
+.swiper-next{
+    display: block;
+    position: relative;
+    top: -216px;
+    z-index: 100;
+    left: 597px;
+}
+.quanping img{
+    position: fixed;
+    top: 40%;
+    left: 0%;
+    width: 100%;
+    z-index: 10001;
+}
+.black{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 10000;
+}
+.csd{
+    position: absolute;
+    top: 0px;
+    left: 91px;
+}
+.hz{
+    position: absolute;
+}
+.div_4 a{
+    position: relative;
+    top: 100px;
+}
+.div_4 img{
+    position: relative;
+    top: 17px;
+    left: 20px;
+}
+.bofang{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1000;
+    display: none
+}
+.bofang video{
+    width: 100%;
+    position: relative;
+    top: 30%;
+}
+.bofang span{
+    color: aliceblue;
+    font-size: 56px;
+    position: relative;
+    left: 600px;
+}
+.div_4 a img:nth-child(2){
+    position: relative;
+    top: -197px;
+    left: 44%;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    -webkit-animation: rotate 3s linear infinite;
+    -moz-animation: rotate 3s linear infinite;
+    -o-animation: rotate 3s linear infinite;
+    animation: rotate 3s linear infinite;
+}
+@-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+    to{-webkit-transform: rotate(360deg)}
+}
+@-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+    to{-moz-transform: rotate(359deg)}
+}
+@-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+    to{-o-transform: rotate(359deg)}
+}
+@keyframes rotate{from{transform: rotate(0deg)}
+    to{transform: rotate(359deg)}
+}
+
+@keyframes twoMove
+{
+    from {left: -600px;}
+    to {left: 10px;}
+}
+@-webkit-keyframes twoMove
+{
+    from {left: -600px;}
+    to {left: 10px;}
+}
+@keyframes twoMove_right
+{
+    from {left: 650px;}
+    to {left: 140px;}
+}
+@-webkit-keyframes twoMove_right
+{
+    from {left: 650px;}
+    to {left: 140px;}
+}
+.div_4 a img:nth-child(3){
+    position: relative;
+    top: -217px;
+    left: 35%;
+}
+.video_1{
+    width: 589px;
+    position: absolute;
+    top: 2722px;
+    left: 24px;
+}

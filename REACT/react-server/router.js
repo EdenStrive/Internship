@@ -57,6 +57,37 @@ async function newA(ctx){
     }) 
 } 
 
+//获取博文总数
+async function total(ctx){
+    let sql = "select count(*) from blog_article_detail"
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("错误",err) 
+    }) 
+}
+
+//获取博文one
+async function blogOne(ctx){
+    let sql = "SELECT id,title,content,create_time FROM blog_article_detail where status=1 order by create_time desc limit "+ctx.query.start+","+ctx.query.end
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("错误",err) 
+    }) 
+}
+
+//获取博文详情
+async function blogTwo(ctx){
+    let sql ='SELECT id,title,content,create_time FROM blog_article_detail where id='+ctx.query.id
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("博文详情错误",err) 
+    }) 
+}
+
+
 
 
 //-----------------------------------------路由  
@@ -67,6 +98,9 @@ module.exports = app => {
     router.get('/count',count)
     router.post('/inserL',inserL)
     router.get('/newA',newA)
+    router.get('/total',total)
+    router.get('/blogOne', blogOne)
+    router.get('/blogTwo', blogTwo)
 
     app.use(router.routes()).use(router.allowedMethods());
 }

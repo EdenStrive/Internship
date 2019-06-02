@@ -82,7 +82,7 @@ class Nav extends React.Component{
     Change(){
         let scrollTop =  document.body.scrollTop || document.documentElement.scrollTop;
         // console.log(scrollTop)
-        if (scrollTop > 400) {
+        if (scrollTop > 200) {
             this.setState({
                 an_name:true
             })

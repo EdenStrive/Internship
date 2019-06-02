@@ -38,4 +38,13 @@ const getBlogone = (start , end) =>{
     })
 }
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone}
+//博文详细内容 
+const getBlogtwo = (id) =>{
+    return axios.get(host+'/blogTwo',{
+        params:{
+            id:id
+        }
+    })
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo}

@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    display: block;
+}
+li{
+    list-style-type: none;
+    z-index: 100;
+}
+.big_div{
+    position: relative;
+    background: url("../img/bg.jpg") no-repeat;
+    width: 750px;
+    height: 4167px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 750px;
+    height: 120px;
+    background-image: url("../img/head_01.jpg");
+    z-index: 100;
+}
+.xwp_img{
+    position: relative;
+    top: 1030px
+}
+.xwp_lunone{
+    position: relative;
+    width: 750px;
+    height: 1205px;
+    top:1110px;
+    background: url("../img/bg_1.png") no-repeat;
+    overflow: hidden;
+}
+.xwp_lunone ul li{
+    position: relative;
+    top: 110px
+}
+.xwp_img_2{
+    position: relative;
+    top: 980px
+}
+.lunbo2{
+    width: 750px;
+    position: relative;
+    top: 1050px;
+}
+.lunbo2 .swiper-wrapper .swiper-slide{
+    width: 310px;
+    height: 551px;
+}
+.next,.prev{
+    width: 76px;
+    height: 48px;
+}
+.next{
+    position: relative;
+    top:-450px;
+    z-index: 100;
+    left: 674px;
+}
+.prev{
+    position: relative;
+    top:-402px;
+    z-index: 100;
+}
+.swiper-pagination{
+    position: static;
+    width: 200px;
+    height: 30px;
+    font-size: 0;
+    margin: 0 auto;
+}
+.swiper-pagination span{
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    position: relative;
+    margin: 0 10px;
+    background: url("../img/click.png") no-repeat;
+    background-size: 25px 25px;
+}
+.swiper-pagination .in{
+    top: 2px;
+    width: 55px;
+    background: url("../img/hover.png") no-repeat;
+    background-size: 55px 20px
+}
+.xwp_reping{
+    position: relative;
+    width: 750px;
+    height: 626px;
+    background: url("../img/youxi_02.png");
+    top: 1130px
+}
+.xwp_img_3{
+    position: relative;
+    top: 1200px
+}
+.quanping{
+    position: fixed;
+    top: 0px;
+    padding-top: 200px;
+    padding-left: 120px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+}
+.quanping img{
+    width: 500px
+}
+.xwp_black{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 1000;
+}
+.xwp_dibu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 1260px;
+    width: 750px;
+    font-size: 26px
+}
+

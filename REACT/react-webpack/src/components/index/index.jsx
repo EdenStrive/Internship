@@ -3,6 +3,7 @@ import Newest from '../newest/newest' //最新博文组件
 import Footer from '../footer/footer'
 import styled from 'styled-components'
 import { Button , Icon , message } from "antd";
+import { Link } from "react-router-dom"
 import { getIntroduce , getLike , getLnumber , inserLike } from  '../../../request/request'
 import "antd/dist/antd.css";
 import "../../../static/css/index.css"
@@ -165,7 +166,7 @@ class Index extends React.Component{
                     <Idiv>{/*第一部分*/}
                         <p style={index_p}>Welcome To My Personal Blog</p>
                         <Span>Leave me more <div style={blue}>messages~</div></Span>
-                        <Button type="primary" style={index_button}>Entry</Button>      
+                        <Link to="/blog"><Button type="primary" style={index_button}>Entry</Button></Link>
                     </Idiv>
                     <div className="div_1"></div>
                     <div className="bowen">

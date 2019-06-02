@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Pagination ,Spin, Alert } from 'antd'; //分页器
 import { getTotal , getBlogone } from  '../../../request/request'
 import '../../../static/css/blog.css'
+import {withRouter} from "react-router-dom";
 //--------------------css
 
 const
@@ -23,7 +24,7 @@ Detail = styled.div`
     margin-top: 40px;
     background: rgb(232, 232, 232);
     border-radius: 10px;
-    opacity: 0.8;
+    opacity: 0.9;
     &:hover{
         opacity:1
     }
@@ -64,7 +65,7 @@ class Blog extends React.Component{
                 let arr = blog.map((va)=>{
                     return (
                         <Detail key = {va.id}>
-                            <a style={title}>{va.title}</a>
+                            <a style={title} onClick={this.detail.bind(this,va.id)}>{va.title}</a>
                             <p className="time">{va.create_time}</p>
                             <div className="content" dangerouslySetInnerHTML={{__html:va.content}}></div>
                         </Detail>   
@@ -89,7 +90,7 @@ class Blog extends React.Component{
             let arr = blog.map((va)=>{
                 return (
                     <Detail key = {va.id}>
-                        <a style={title}>{va.title}</a>
+                        <a style={title} onClick={this.detail.bind(this,va.id)}>{va.title}</a>
                         <p className="time">{va.create_time}</p>
                         <div className="content" dangerouslySetInnerHTML={{__html:va.content}}></div>
                     </Detail>   
@@ -100,6 +101,10 @@ class Blog extends React.Component{
             })
         })
 
+    }
+    detail(id){
+        let ids = id
+        this.props.history.push("/detail/"+ids);
     }
     render(){
         return(
@@ -132,4 +137,4 @@ class Blog extends React.Component{
         )
     }
 }
-export default Blog
+export default withRouter(Blog)

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>无尽海域</title>
+        <meta name="keywords" content="无尽海域" />
+        <meta name="description" content="无尽海域预约" />
+        <meta content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <meta name="author" content="Design:sunlei; Web Layout:wenpeng;" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body class="body">
+    <div class="div_1" id="xuleizhen"></div>
+    <div class="div_2">
+        <img src="./img/baozao.png" class="left div_2_img" id="needMove">
+    </div>
+    <div class="div_3">
+        <img src="./img/ditu.png" class="left div_3_img" id="needMove">
+        <div class="right div_3_img2" id="needMove">
+             <img src="./img/haizhan1.png" class="">
+             <img src="https://event.changyou.com/wjhy/pic/20190516/csd.gif" class="csd" alt="" srcset="">
+         </div>
+        <div class="left div_3_img" id="needMove" style="top:120px">
+                <img src="https://event.changyou.com/wjhy/pic/20190516/hz.gif" alt="" srcset="" class="hz">
+                <img src="./img/haizhan.png">
+        </div>
+    </div>
+    <div class="div_4">
+        <a href="javascript:;" class="video_btn0">
+            <img src="./img/video.png">
+            <img src="./img/video_b.png">
+            <img src="./img/video_c.png">
+        </a>
+    </div>
+    <div class="div_5">
+            <div class="swiper-container lunbo1">
+                    <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./img/piersa.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/mzl.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/glb.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/bdf.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/bjy.png" alt=""></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+            </div>
+    </div>
+    <div class="div_6">
+        <div class="swiper-container lunbo2">
+                <div class="swiper-wrapper" onclick="show(event)">
+                        <div class="swiper-slide"><img src="./img/1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/4.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/5.jpg" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-prev"><img src="./img/left1.png" alt="上一页"></div>
+                <div class="swiper-next"><img src="./img/right1.png" alt="下一页"></div>
+                <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="xwp_zheyan">
+    </div>
+    <video src="https://files2.changyou.com/wjhy/wjhy.mp4" id="video-1" style="z-index: -1;" class="video_1" poster="./img/ready.png" loop="loop" playsinline="true" controlsList="nodownload" controls="controls" webkit-playsinline="true" x5-video-player-type="h5" preload="auto"></video>
+</body>
+<script src="./js/swiper.min.js"></script>
+<script>
+    //轮播图一二
+    window.onload = function(){
+        var swiper = new Swiper('.lunbo1', {
+            initialSlide: 0,
+            autoplay : 3000,
+            autoplayDisableOnInteraction:false, //用户点击轮播后，是否自动滚动
+            speed:400,
+            grabCursor: true,
+            centeredSlides: true,
+            loop:true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+
+        var swiper = new Swiper('.lunbo2', {
+            effect:"coverflow",
+			// centeredSlides:!0,
+			// slidesPerView:'auto',
+            //			autoplay:3500,
+			slidesPerview:'auto',
+			 loop:true,
+			prevButton:".swiper-prev",
+			nextButton:".swiper-next",
+			coverflow:{rotate:0,stretch:80,depth:500,modifier:1,slideShadows:true},
+			pagination: '.swiper-pagination',
+			paginationClickable:true
+        });
+    }
+    //视频播放
+    var video = document.querySelector(".video_btn0")
+    video.addEventListener("click",function(){
+        bVideo()
+    })
+    var video1 =document.getElementById("video-1")
+    var bofang = document.querySelector(".bofang")
+
+    function bVideo()
+    {
+        video1.style.zIndex="1000"
+        video1.play()
+    }
+
+</script>
+<script src="./js/index.js"></script>
+
+</html>
