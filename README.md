@@ -21,6 +21,7 @@ github仓库主要包括内容
 - [x] koa 中 pool链接数据库的链接数为10，所以每次请求完数据库都要释放连接池。否则将请求不回来数据
 - [x] setState触发的页面重新render需要追踪到最内层，如果存在多层对象，要提前在state中提前定义外层对象名称。
 - [x] react-router 4.x，使用antd分页器实现分页
+- [x] react-redux
 
 ### 3. 高亮一段代码[^code] 
 
