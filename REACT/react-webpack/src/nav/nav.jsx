@@ -98,8 +98,8 @@ class Nav extends React.Component{
                 <INav animation = {this.state.an_name}>
                 <Link to="/"><Li><span>Eden</span></Li></Link>
                     <Ndiv>
-                        <Link to="/blog"><Li><span>Blog</span></Li></Link>
-                        <Li><span>Sign in</span></Li>
+                        <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
+                        <Link to="/signin"><Li></Li><Li><span>Sign in</span></Li></Link>
                         <Li><span>Sign up</span></Li>
                     </Ndiv>
                 </INav>

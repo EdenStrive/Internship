@@ -26,7 +26,7 @@ class Newest extends React.Component{
                 let narr = []
                 nartic.forEach((arc,id) => {
                     let child = (<div className="div_2" key={arc.id}>
-                                    <img src={this.imgsrc(id)} alt="" style={{width:"95%",borderRadius:"10px",height:"305.89px"}} />
+                                    <img src={this.imgsrc(id)} alt="" onClick={this.detail.bind(this,arc.id)} style={{width:"95%",borderRadius:"10px",height:"305.89px",cursor: "pointer"}} />
                                     <h2 style={titleB} onClick={this.detail.bind(this,arc.id)}>{arc.title}</h2><br/>
                                     <span>{arc.create_time}</span>
                                     <div className="Ineirong" dangerouslySetInnerHTML={{__html:arc.content}} ></div>

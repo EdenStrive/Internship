@@ -111,13 +111,20 @@ class Index extends React.Component{
     }
     componentDidMount(){ //render后初始化部分请求
         scrollTo(0,0)//回到页面顶部
-        //查询博文介绍
+        //查询博文介绍 使用sessionStorage进行缓存优化，因为这个不常动的内容
         getIntroduce() 
             .then((res) =>{
-                let values = res.data.value[0]
-                this.setState({
-                    introduce: values
-                })
+                if (sessionStorage.getItem("intro")) {
+                    this.setState({
+                        introduce: JSON.parse(sessionStorage.getItem("intro"))
+                    })
+                }else{
+                    let values = res.data.value[0]
+                    this.setState({
+                        introduce: values
+                    })
+                    sessionStorage.setItem("intro",JSON.stringify(values))
+                }
             })
             .catch((err)=>{
                 console.log("err:"+err)
@@ -173,13 +180,13 @@ class Index extends React.Component{
                         <Idiv_2>
                             <Icon type="smile" theme="twoTone" style={icons}/>                            
                             <ISpan style={{color: "#9191de"}}>{this.state.introduce.title}</ISpan><br/>
-                            <ISpan style={contents}>{this.state.introduce.content}</ISpan>  
+                            <ISpan style={contents}>{this.state.introduce.content ? this.state.introduce.content : "内容稍后出现哦！"}</ISpan>  
                             <div style={{position: "relative", top:"0px",fontSize:" 23px",left: "84%"}}>
                                 <div style={{display:"inline-block"}}>
                                 {this.state.likeI}&nbsp;&nbsp;&nbsp;
                                 </div>
 
-                                {this.state.like==null ? "网络出问题啦~~": this.state.like} &nbsp;&nbsp;
+                                {this.state.like==null ? "网络出问题啦!": this.state.like} &nbsp;&nbsp;
 
                                 <span style={{fontSize:"14px",color:"red"}}>
                                     {this.state.namber}
