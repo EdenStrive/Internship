@@ -47,4 +47,12 @@ const getBlogtwo = (id) =>{
     })
 }
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo}
+//登陆
+const signin = (name , pass ) =>{
+    return axios.post(host+'/signin',{
+        name: name,
+        pass : pass
+    })
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin}

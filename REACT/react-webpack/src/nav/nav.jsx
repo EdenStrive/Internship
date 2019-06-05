@@ -60,9 +60,15 @@ class Nav extends React.Component{
     constructor(props){
         super(props)
         this.state = {
+            admin:<Ndiv>
+                    <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
+                    <Link to="/signin"><Li></Li><Li><span>Sign in</span></Li></Link>
+                    <Li><span>Sign up</span></Li>
+                  </Ndiv>
         }
         this.bindScroll = this.bindScroll.bind(this)
         this.Change = this.Change.bind(this)
+        this.changeNav = this.changeNav.bind(this)
     }
     componentDidMount(){
         window.addEventListener("scroll",this.bindScroll())
@@ -77,6 +83,17 @@ class Nav extends React.Component{
             clearTimeout(timer);
             timer = setTimeout(Change, 100);
         }
+    }
+    changeNav(){
+        console.log(22222222222222222222)
+        this.setState({
+            admin:                   
+             <Ndiv>
+                <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
+                <Link to="/signin"><Li></Li><Li><span>welcome</span></Li></Link>
+                <Li><span>entry admin</span></Li>
+            </Ndiv>
+        })
     }
     //实现函数节流
     Change(){
@@ -97,15 +114,11 @@ class Nav extends React.Component{
             <div>
                 <INav animation = {this.state.an_name}>
                 <Link to="/"><Li><span>Eden</span></Li></Link>
-                    <Ndiv>
-                        <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
-                        <Link to="/signin"><Li></Li><Li><span>Sign in</span></Li></Link>
-                        <Li><span>Sign up</span></Li>
-                    </Ndiv>
+                    {this.state.admin}
                 </INav>
                 <GlobalStyle />  {/*前台全局css样式*/}
                 {/* 路由每次更改此Children */}
-                {this.props.children} 
+                { this.props.children } 
             </div>
         )
     }
