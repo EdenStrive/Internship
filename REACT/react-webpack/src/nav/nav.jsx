@@ -2,6 +2,9 @@ import React from 'react'
 import styled , { keyframes } from 'styled-components'
 import { GlobalStyle } from '../../static/css/style' //引用的全局变量
 import { Link } from "react-router-dom"
+import store from "@/store/index"
+import { removeCookie, getCookie } from '@/cookie/jsCookie'
+import { message } from 'antd';
 //--------------------css
 const 
 nav_an = keyframes`
@@ -60,21 +63,20 @@ class Nav extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            admin:<Ndiv>
-                    <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
-                    <Link to="/signin"><Li></Li><Li><span>Sign in</span></Li></Link>
-                    <Li><span>Sign up</span></Li>
-                  </Ndiv>
         }
         this.bindScroll = this.bindScroll.bind(this)
         this.Change = this.Change.bind(this)
-        this.changeNav = this.changeNav.bind(this)
+        this.logout = this.logout.bind(this)
+        store.subscribe(this.welcome.bind(this))//订阅redex。只要state中的数据放生了改变就会重新render
     }
     componentDidMount(){
         window.addEventListener("scroll",this.bindScroll())
     }
     componentWillUnmount(){
         window.removeEventListener("scroll",this.bindScroll)
+    }
+    welcome(){
+        this.setState({})
     }
     bindScroll(){
         let timer
@@ -83,17 +85,6 @@ class Nav extends React.Component{
             clearTimeout(timer);
             timer = setTimeout(Change, 100);
         }
-    }
-    changeNav(){
-        console.log(22222222222222222222)
-        this.setState({
-            admin:                   
-             <Ndiv>
-                <Link to="/blog" style={{position: "relative",left: "125px"}}><Li><span>Blog</span></Li></Link>
-                <Link to="/signin"><Li></Li><Li><span>welcome</span></Li></Link>
-                <Li><span>entry admin</span></Li>
-            </Ndiv>
-        })
     }
     //实现函数节流
     Change(){
@@ -109,12 +100,30 @@ class Nav extends React.Component{
             })
         }
     }
+    //退出登录
+    logout(){
+        removeCookie()
+        message.success('退出登录！', 2);
+        this.setState({})
+    }
     render(){
         return(
             <div>
                 <INav animation = {this.state.an_name}>
                 <Link to="/"><Li><span>Eden</span></Li></Link>
-                    {this.state.admin}
+                    {getCookie('edenName') == undefined ?
+                    <Ndiv>
+                        <Link to="/blog" style={{position: "relative"}}><Li><span>Blog</span></Li></Link>
+                        <Link to="/signin"><Li><span>Sign in</span></Li></Link>
+                        <Li><span>Sign up</span></Li>
+                    </Ndiv>:
+                    <Ndiv>
+                        <Link to="/blog" style={{position: "relative"}}><Li><span>Blog</span></Li></Link>
+                        <Li><span style={{width:"130px",display:"block"}}>Backstage</span></Li>
+                        <Li><span style={{cursor:"auto",width:"175px",display:"block",marginLeft:"20px"}}>Welcome : {getCookie('edenName')}</span></Li>
+                        <Li  style={{width:"130px",marginLeft:"62px"}} onClick={this.logout}><span>Logout</span></Li>
+                    </Ndiv>
+                    }
                 </INav>
                 <GlobalStyle />  {/*前台全局css样式*/}
                 {/* 路由每次更改此Children */}

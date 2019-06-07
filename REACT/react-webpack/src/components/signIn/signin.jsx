@@ -4,7 +4,9 @@ import '../../../static/css/signin.css'
 import { signin } from  '../../../request/request'
 import Footer from '../footer/footer'
 import { Form, Icon, Input, Button, Checkbox , message } from 'antd';
-import Cookies from 'js-cookie'
+import { setCookie } from '@/cookie/jsCookie'
+import store from '@/store/index'
+import { withRouter } from "react-router-dom";
 
 const
 Idiv_4 = styled.div`
@@ -42,16 +44,20 @@ class Signin extends React.Component{
                         let value = res.data.value
                         console.log(value)
                         if (code == 0) {
-                            message.success('登陆成功啦！如需留言点击导航中的进入后台哦', 3);
+                            message.success('登陆成功啦！如需留言点击导航中的Backstage哦', 2.5);
                             if (values.remember == true) {
-                                console.log(1)
-                                Cookies.set("edenName", value[0].name , { expires: 7 })
-                                Cookies.set("edenRole", value[0].role , { expires: 7 })
+                                setCookie(value[0].name , value[0].role , 7)
                             }else{
-                                console.log(2)
-                                setCookie("edenName", value[0].name)
-                                Cookies.set("edenRole", value[0].role)
+                                setCookie(value[0].name , value[0].role )
                             }
+                            const action = {
+                                type:"change_welcome",
+                                value:true
+                            }
+                            store.dispatch(action)
+                            setTimeout(() => {
+                                this.props.history.push("/");
+                            }, 2500);
                         }else{
                             message.error('请检查登陆的账号密码是否正确！');
                             setTimeout(() => {
@@ -147,4 +153,4 @@ class Signin extends React.Component{
     }
 }
 const LoginForm = Form.create({ name: 'normal_login' })(Signin);
-export default LoginForm
+export default withRouter(LoginForm)
