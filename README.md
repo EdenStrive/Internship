@@ -20,7 +20,8 @@ github仓库主要包括内容
 - [x] ie8不支持flex、伪类等css3的新属性，rem对于ie8失效，同时如果js文件中存在一个解析出错的地方就会终止所有js文件的编译，作出判断跳过某段不想让ie8编译的代码也是不可行的。
 - [x] koa 中 pool链接数据库的链接数为10，所以每次请求完数据库都要释放连接池。否则将请求不回来数据
 - [x] setState触发的页面重新render需要追踪到最内层，如果存在多层对象，要提前在state中提前定义外层对象名称。
-- [x] react-router 4.x，使用antd分页器实现分页
+- [x] react-router 4.x，使用antd分页器实现分页（前端实现）
+- [x] Redux
 - [x] react-redux
 
 ### 3. 高亮一段代码[^code] 
@@ -54,3 +55,7 @@ console.log("Hello world!!");
 
     > * 我在公司写的星际战甲页面：
    ————————[ 点击浏览查看 ]( http://event.changyou.com/wf/201905/fetena/pc/index.html )
+   
+2019-06-10
+
+    > * 备考期末(#^.^#)
