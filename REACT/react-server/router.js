@@ -87,6 +87,38 @@ async function blogTwo(ctx){
     }) 
 }
 
+//登陆验证
+async function signin(ctx){
+    let name = ctx.request.body.name
+    let pass = ctx.request.body.pass
+    let sql = 'select user_id,name,role from blog_user where user_id="' + name + '" and password="' + pass+'"'
+    await query.query(sql)
+    .then(res => {
+        if(res[0].user_id !== null){
+            ctx.body = { code:0 , value: res }
+        }
+    })
+    .catch(err =>{
+        ctx.body = { code:1 , value:"请检查账号或者密码是否正确！" }
+    })
+}
+
+//注册
+async function signup(ctx){
+    let id = ctx.request.body.id
+    let pass = ctx.request.body.pass
+    let name = ctx.request.body.name
+    let sql = 'INSERT INTO blog_user SET ?'
+    let post = {user_id:id,name:name,password:pass,role:"游客"}
+    await query.query(sql,post)
+    .then(res => {
+        ctx.body = {code:1,value:"注册成功，跳转至登陆页面"}
+    })
+    .catch(err =>{
+    })
+
+}
+
 
 
 
@@ -101,6 +133,8 @@ module.exports = app => {
     router.get('/total',total)
     router.get('/blogOne', blogOne)
     router.get('/blogTwo', blogTwo)
+    router.post('/signin',signin)
+    router.post('/signup',signup)
 
     app.use(router.routes()).use(router.allowedMethods());
 }

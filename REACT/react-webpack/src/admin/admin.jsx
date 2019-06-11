@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../static/css/admin.css"
+import "../../static/css/admin.less"
 import { removeCookie, getCookie } from '@/cookie/jsCookie'
 import { Menu, Dropdown, Icon } from 'antd';
 
@@ -54,7 +54,12 @@ class Admin extends React.Component{
                         </div>
 
                         <div className = "a_bottom">
+                            <div className = "b_left">
 
+                            </div>
+                            <div className = "b_right">
+
+                            </div>
                         </div>
 
                     </div>
