@@ -5,17 +5,21 @@ import Blog from "@/components/blog/blog"
 import Detail from "@/components/detail/detail"
 import notFound from "@/components/404/notFound"
 import LoginForm from "@/components/signIn/signin"
+import Signups from "@/components/signup/signup"
+
+
 
 class SubRouter extends React.Component{
     render(){
         return(
             <Switch>
-                {/* exact为精确匹配路径 */}  {/* 把路由组件配置分离开 */}
-                <Route exact path = "/" component = {Index} /> 
-                <Route path = "/blog" component = {Blog} /> 
-                <Route path = "/signin" component = {LoginForm} /> 
-                <Route path = "/detail/:id" component = {Detail} /> 
-                <Route component={notFound} />
+                    {/* exact为精确匹配路径 */}  {/* 把路由组件配置分离开 */}
+                    <Route exact path = "/" component = {Index} /> 
+                    <Route path = "/blog" component = {Blog} /> 
+                    <Route path = "/signin" component = {LoginForm} /> 
+                    <Route path = "/signup" component = {Signups} /> 
+                    <Route path = "/detail/:id" component = {Detail} /> 
+                    <Route component={notFound} />
             </Switch>
         )
     }

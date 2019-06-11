@@ -23,6 +23,7 @@
     background-size: 1920px;
     padding-top:90px;
     background-position-y: -450px;
+    overflow-x: hidden;
 }
 .sign_in{
     height: 720px;

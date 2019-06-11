@@ -28,7 +28,7 @@ class Footer extends React.Component{
                             <a>FUNCTION</a>
                             <a>Blog</a>
                             <a>Sign in</a>
-                            <a>Sing up</a>
+                            <a>Sign up</a>
                         </div>
                         <div className="foo_fun">
                             <a>USEFUL LINKS</a>

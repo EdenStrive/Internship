@@ -5,7 +5,9 @@ import ReactDOM from 'react-dom' //把创建好的组件和虚拟Dom放到页面
 import Routers from './router/AppRouter' //引入路由
 
 ReactDOM.render(
-    <Routers />
+    <div>
+        <Routers />
+    </div>
     ,
     document.getElementById("app")
 )

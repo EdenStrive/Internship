@@ -115,11 +115,12 @@ class Nav extends React.Component{
                     <Ndiv>
                         <Link to="/blog" style={{position: "relative"}}><Li><span>Blog</span></Li></Link>
                         <Link to="/signin"><Li><span>Sign in</span></Li></Link>
-                        <Li><span>Sign up</span></Li>
-                    </Ndiv>:
+                        <Link to="/signup"><Li><span>Sign up</span></Li></Link>
+                    </Ndiv>
+                    :
                     <Ndiv>
                         <Link to="/blog" style={{position: "relative"}}><Li><span>Blog</span></Li></Link>
-                        <Li><span style={{width:"130px",display:"block"}}>Backstage</span></Li>
+                        <Link to="/admin"><Li><span style={{width:"130px",display:"block"}}>Backstage</span></Li></Link>
                         <Li><span style={{cursor:"auto",width:"175px",display:"block",marginLeft:"20px"}}>Welcome : {getCookie('edenName')}</span></Li>
                         <Li  style={{width:"130px",marginLeft:"62px"}} onClick={this.logout}><span>Logout</span></Li>
                     </Ndiv>

@@ -2,7 +2,9 @@ import React from "react"
 
 const
 notFounds ={
-    fontSize :"70px"
+    fontSize :"70px",
+    backgroundColor:"black",
+    color:"rgb(255,255,255)"
 }
 
 class notFound extends React.Component{

@@ -1,0 +1,39 @@
+.up_body{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: 1200px;
+    overflow: auto;
+}
+.up_hidden{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.up_moduel{
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+.up_content{
+    width: 1920px;
+    background: url("../img/signup.jpg") no-repeat top center;
+    position: relative;
+    left: -360px;
+    overflow-x: hidden;
+    background-position-y: -280px;
+}
+.up_up{
+    position: relative;
+    width: 570px;
+    background-color: rgb(255, 255, 255);
+    padding-left: -32px;
+    padding-right: 40px;
+    padding-top: 35px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 194px;
+    margin-bottom: 245px;
+    border: 4px rgba(143, 197, 214, 0.6) solid;
+}

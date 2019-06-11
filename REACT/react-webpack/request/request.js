@@ -55,4 +55,13 @@ const signin = (name , pass ) =>{
     })
 }
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin}
+//注册
+const signup = (id , pass , name ) =>{
+    return axios.post(host+'/signup',{
+        id:id,
+        pass:pass,
+        name:name
+    })
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin , signup }

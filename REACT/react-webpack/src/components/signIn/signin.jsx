@@ -33,7 +33,6 @@ class Signin extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-            console.log(values)
             if (!err) {
                 this.setState({
                     button: <Button type="primary" htmlType="submit" className="login-form-button" disabled>Log in</Button>
@@ -42,7 +41,6 @@ class Signin extends React.Component{
                     .then(res=>{
                         let code = res.data.code
                         let value = res.data.value
-                        console.log(value)
                         if (code == 0) {
                             message.success('登陆成功啦！如需留言点击导航中的Backstage哦', 2.5);
                             if (values.remember == true) {
