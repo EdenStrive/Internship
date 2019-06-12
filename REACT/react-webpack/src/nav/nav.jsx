@@ -74,6 +74,9 @@ class Nav extends React.Component{
     }
     componentWillUnmount(){
         window.removeEventListener("scroll",this.bindScroll)
+        this.setState = (state, callback) =>{
+            return;
+        }
     }
     welcome(){
         this.setState({})

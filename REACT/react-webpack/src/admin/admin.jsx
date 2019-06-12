@@ -1,45 +1,77 @@
 import React from 'react'
 import "../../static/css/admin.less"
 import { removeCookie, getCookie } from '@/cookie/jsCookie'
-import { Menu, Dropdown, Icon } from 'antd';
+import { Menu, Dropdown, Icon , BackTop , message} from 'antd';
+import Siderone from '@/components/roleOne/roleone'
+import Sidertwo from '@/components/roleTwo/roletwo'
+import {withRouter} from "react-router-dom";
 
-const menu = (
-    <Menu>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-            留言
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-            返回首页
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-            退出登录
-        </a>
-      </Menu.Item>
-    </Menu>
-  );
+
 
 class Admin extends React.Component{
+
     constructor(props){
         super(props)
         this.state = {
+            roleNav:<Siderone />
         }
+        this.push = this.push.bind(this)
     }
     componentDidMount(){ //render后初始化部分请求
         scrollTo(0,0)//回到页面顶部
+        if (getCookie("edenRole") == "100") {
+            this.setState({
+                roleNav : <Sidertwo />
+            })
+        }
+        if(!getCookie("edenName")){
+            message.error("您还未登录，请前往登录页登录",1)
+            setTimeout(() => {
+                this.props.history.push("/signin");
+            }, 1000);
+        }
+    }
+    componentWillUnmount(){
+        clearTimeout(this.push);
+    }
+    push(id){
+        if (id == 1) {
+            this.props.history.push("/");
+        }else if(id == 2){
+            removeCookie()
+            message.success("已注销，即将跳转至首页",1.5)
+            setTimeout(() => {
+                this.props.history.push("/");
+            }, 1500);
+        }
     }
     render(){
+        const menu = (
+            <Menu>
+              <Menu.Item>
+                <a>
+                    留言
+                </a>
+              </Menu.Item>
+              <Menu.Item>
+                <a onClick = {this.push.bind(this,1)}>
+                    返回首页
+                </a>
+              </Menu.Item>
+              <Menu.Item onClick = {this.push.bind(this,2)}>
+                <a>
+                    退出登录
+                </a>
+              </Menu.Item>
+            </Menu>
+        );
         return(
             <div className = "a_body">
                 <div className = "a_hidden">
                     <div className = "a_content">
 
                         <div className = "a_header">
-                            <div className = "header_left">
+                            <div className = "header_left" onClick = {this.push.bind(this,1)}>
                                <i>Eden</i> 
                             </div>
                             <div className = "header_right">
@@ -55,17 +87,19 @@ class Admin extends React.Component{
 
                         <div className = "a_bottom">
                             <div className = "b_left">
-
+                                {this.state.roleNav}
                             </div>
                             <div className = "b_right">
 
                             </div>
                         </div>
-
+                        <div>
+                            <BackTop />
+                        </div>
                     </div>
                 </div>
             </div>
         )
     }
 }
-export default Admin
+export default withRouter(Admin)

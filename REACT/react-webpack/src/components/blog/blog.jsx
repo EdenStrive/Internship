@@ -106,6 +106,12 @@ class Blog extends React.Component{
         let ids = id
         this.props.history.push("/detail/"+ids);
     }
+    componentWillUnmount(){
+        this.setState = (state, callback) =>{
+            return;
+        }
+    }
+
     render(){
         return(
             <div className="blog">

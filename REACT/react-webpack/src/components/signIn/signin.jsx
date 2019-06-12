@@ -42,7 +42,7 @@ class Signin extends React.Component{
                         let code = res.data.code
                         let value = res.data.value
                         if (code == 0) {
-                            message.success('登陆成功啦！如需留言点击导航中的Backstage哦', 2.5);
+                            message.success('登陆成功啦！', 2.5);
                             if (values.remember == true) {
                                 setCookie(value[0].name , value[0].role , 7)
                             }else{
@@ -54,7 +54,7 @@ class Signin extends React.Component{
                             }
                             store.dispatch(action)
                             setTimeout(() => {
-                                this.props.history.push("/");
+                                this.props.history.push("/admin");
                             }, 2500);
                         }else{
                             message.error('请检查登陆的账号密码是否正确！');

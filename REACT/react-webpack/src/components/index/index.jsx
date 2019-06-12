@@ -131,7 +131,6 @@ class Index extends React.Component{
             })
         //查询小心心
         let Ip = returnCitySN['cip']
-        console.log(Ip)
         getLike(Ip)
             .then((res)=>{
                 if (res.data.isLike == 1) {
