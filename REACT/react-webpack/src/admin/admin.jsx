@@ -4,18 +4,25 @@ import { removeCookie, getCookie } from '@/cookie/jsCookie'
 import { Menu, Dropdown, Icon , BackTop , message} from 'antd';
 import Siderone from '@/components/roleOne/roleone'
 import Sidertwo from '@/components/roleTwo/roletwo'
+import Vmessage from '@/components/vmessage/vmessage' //查看留言
+import Lmessage from '@/components/lmessage/lmessage' //留言
+import Vblog from '@/components/vblog/vblog'
+import Pblog from '@/components/pblog/pblog'
+import store from '@/store/index'
 import {withRouter} from "react-router-dom";
-
-
 
 class Admin extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
-            roleNav:<Siderone />
+            roleNav:<Siderone />,
+            modul: 1,
+            right : <Vmessage />
         }
         this.push = this.push.bind(this)
+        this.changeM = this.changeM.bind(this)
+        store.subscribe(this.changeM.bind(this))
     }
     componentDidMount(){ //render后初始化部分请求
         scrollTo(0,0)//回到页面顶部
@@ -33,6 +40,35 @@ class Admin extends React.Component{
     }
     componentWillUnmount(){
         clearTimeout(this.push);
+    }
+    changeM(){
+        let stores = store.getState().admin
+        switch (stores) {
+            case 1:
+                this.setState({
+                    right: <Vmessage />
+                })
+                break;
+    
+            case 2:
+                this.setState({
+                    right: <Lmessage />
+                })
+                break;
+            case 3:
+                this.setState({
+                    right: <Vblog />
+                })
+                break;
+            case 4:
+                this.setState({
+                    right: <Pblog />
+                })
+                break;
+    
+            default:
+                break;
+        }
     }
     push(id){
         if (id == 1) {
@@ -90,7 +126,7 @@ class Admin extends React.Component{
                                 {this.state.roleNav}
                             </div>
                             <div className = "b_right">
-
+                                {this.state.right}
                             </div>
                         </div>
                         <div>

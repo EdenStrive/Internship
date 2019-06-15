@@ -64,4 +64,21 @@ const signup = (id , pass , name ) =>{
     })
 }
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin , signup }
+//查询留言
+const getsaid = () => axios.get(host+'/getsaid')
+
+
+//留言
+const setSaid = (name , content ) =>{
+    return axios.post(host+'/setsaid',{
+        name: name,
+        content : content
+    })
+}
+
+//博文列表
+const blogList = () =>{
+    return axios.get(host+'/bloglist')
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin , signup , getsaid , setSaid , blogList }

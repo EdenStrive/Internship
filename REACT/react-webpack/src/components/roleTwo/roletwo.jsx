@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
+import store from '@/store/index'
 
 const { SubMenu }  = Menu;
 
@@ -23,7 +24,42 @@ class Sidertwo extends React.Component {
       });
     }
   };
+  changeMeau(key){
+    switch (key) {
+      case 1:
+          const action1 = {
+            type:"change_meau1",
+            value:1
+          }
+          store.dispatch(action1)        
+          break;
 
+      case 2:
+        const action = {
+          type:"change_meau2",
+          value:2
+        }
+        store.dispatch(action)
+          break;
+      case 3:
+        const action3 = {
+          type:"change_meau3",
+          value:3
+        }
+        store.dispatch(action3)
+          break;
+      case 4:
+        const action4 = {
+          type:"change_meau4",
+          value:4
+        }
+        store.dispatch(action4)
+          break;
+          
+          default:
+          break;
+    }
+  }
   render() {
     return (
         <Menu
@@ -41,20 +77,20 @@ class Sidertwo extends React.Component {
             </span>
         }
         >
-        <Menu.Item key="1">View messages</Menu.Item>
-        <Menu.Item key="2">Leaving message</Menu.Item>
+        <Menu.Item key="1" onClick = {this.changeMeau.bind(this , 1)}>View messages</Menu.Item>
+        <Menu.Item key="2" onClick = {this.changeMeau.bind(this , 2)}>Leaving message</Menu.Item>
         </SubMenu>
         <SubMenu
         key="sub3"
         title={
             <span>
-            <Icon type="setting" />
+            <Icon type="appstore" />
             <span>Blog</span>
             </span>
         }
         >
-        <Menu.Item key="5">View blog</Menu.Item>
-        <Menu.Item key="4">Publish blog</Menu.Item>
+        <Menu.Item key="5" onClick = {this.changeMeau.bind(this , 3)}>View blog</Menu.Item>
+        <Menu.Item key="4" onClick = {this.changeMeau.bind(this , 4)}>Publish blog</Menu.Item>
         </SubMenu>
         <SubMenu
         key="sub4"

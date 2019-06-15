@@ -35,6 +35,7 @@
   "dependencies": {
     "antd": "^3.17.0",
     "axios": "^0.18.0",
+    "braft-editor": "^2.3.5",
     "js-cookie": "^2.2.0",
     "less": "^3.9.0",
     "react": "^16.8.6",

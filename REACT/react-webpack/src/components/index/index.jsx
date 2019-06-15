@@ -133,7 +133,7 @@ class Index extends React.Component{
         let Ip = returnCitySN['cip']
         getLike(Ip)
             .then((res)=>{
-                if (res.data.isLike == 1) {
+                if (res.data.isLike > 0) {
                     this.setState({
                         like: <Icon component={HeartSvg} style={{color: 'hotpink'}} theme="twoTone" twoToneColor="#eb2f96" banner="true"/>,
                         likeI : "点赞万岁~"
@@ -167,8 +167,6 @@ class Index extends React.Component{
     render(){
         return(
             <div style={over}>
-                    {this.state.message}
-                    {/*提示*/}
                     <Img src="../../static/img/bg_index.jpg" alt=""/>  {/* 页面背景图片 */}
                     <Idiv>{/*第一部分*/}
                         <p style={index_p}>Welcome To My Personal Blog</p>

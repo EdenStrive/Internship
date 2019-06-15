@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
+import store from '@/store/index'
 
 const { SubMenu }  = Menu;
 
@@ -23,7 +24,28 @@ class Siderone extends React.Component {
       });
     }
   };
+  changeMeau(key){
+    switch (key) {
+      case 1:
+          const action1 = {
+            type:"change_meau1",
+            value:1
+          }
+          store.dispatch(action1)        
+          break;
 
+      case 2:
+        const action = {
+          type:"change_meau2",
+          value:2
+        }
+        store.dispatch(action)
+          break;
+
+      default:
+          break;
+    }
+  }
   render() {
     return (
         <Menu
@@ -41,8 +63,8 @@ class Siderone extends React.Component {
             </span>
         }
         >
-        <Menu.Item key="1">View messages</Menu.Item>
-        <Menu.Item key="2">Leaving message</Menu.Item>
+        <Menu.Item key="1" onClick = {this.changeMeau.bind(this , 1)}>View messages</Menu.Item>
+        <Menu.Item key="2" onClick = {this.changeMeau.bind(this , 2)}>Leaving message</Menu.Item>
         </SubMenu>
         <SubMenu
         key="sub4"

@@ -1,5 +1,6 @@
 const defaultState = {
-    welcome:false
+    welcome:false,
+    admin: 1
 }
 
 export default (state = defaultState, action)=>{
@@ -7,7 +8,16 @@ export default (state = defaultState, action)=>{
     const newState = JSON.parse(JSON.stringify(state)) //对数据进行深拷贝
     if (action.type == "change_welcome") {
         newState.welcome = action.value
+    }else if(action.type == "change_meau2"){
+        newState.admin = action.value
+    }else if(action.type == "change_meau1"){
+        newState.admin = action.value
+    }else if(action.type == "change_meau3"){
+        newState.admin = action.value
+    }else if(action.type == "change_meau4"){
+        newState.admin = action.value
     }
+
     //新的newState会自动替换老的state
     return newState
 }

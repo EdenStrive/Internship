@@ -119,7 +119,40 @@ async function signup(ctx){
 
 }
 
+//查询留言
+async function getsaid(ctx){
+    let sql = "SELECT id,user_id,content FROM blog_said where status=1 order by id desc"
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("错误",err) 
+    }) 
+}
 
+//留言
+async function setsaid(ctx){
+    let name = ctx.request.body.name
+    let content = ctx.request.body.content
+    let sql = 'INSERT INTO blog_said SET ?'
+    let post = {user_id:name,content:content}
+    await query.query(sql,post)
+    .then(res => {
+       ctx.body = { code: 0 , value :"留言成功，即将跳转至查看留言页面。"}
+    })
+    .catch(err =>{
+        ctx.body = { code:1 , value:"留言失败。" }
+    })
+}
+
+//获取博文列表
+async function bloglist(ctx){
+    let sql = "SELECT id,title FROM blog_article_detail where status=1 order by create_time desc"
+    await query.query(sql).then(res => {
+        ctx.body = {value:res} 
+    }).catch(err => {
+        console.log("错误",err) 
+    }) 
+}
 
 
 //-----------------------------------------路由  
@@ -135,6 +168,9 @@ module.exports = app => {
     router.get('/blogTwo', blogTwo)
     router.post('/signin',signin)
     router.post('/signup',signup)
+    router.get('/getsaid', getsaid)
+    router.post('/setsaid',setsaid)
+    router.get('/bloglist', bloglist)
 
     app.use(router.routes()).use(router.allowedMethods());
 }
