@@ -1,5 +1,5 @@
 import axios from 'axios'
-const host = 'http://10.12.28.177:5000'
+const host = 'http://127.0.0.1:5000'
 
 //获取博文技术栈
 const getIntroduce = () => axios.get(host + "/")
