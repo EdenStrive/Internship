@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table, Divider } from 'antd';
-import { blogList } from  '../../../request/request'
+import { blogList , dblog } from  '../../../request/request'
+import store from '@/store/index'
 import "../../../static/css/admin.less"
 
 const { Column } = Table;
@@ -34,15 +35,29 @@ class Vblog extends React.Component {
                                 key="action"
                                 render={(text, record) => (
                                     <span>
-                                    <a href="javascript:;">修改 {record.key}</a>
+                                    <a onClick = {this.modify.bind(this,record.key)} href="javascript:;">修改 {record.key}</a>
                                     <Divider type="vertical" />
-                                    <a href="javascript:;">删除</a>
+                                    <a onClick = {this.delete.bind(this,record.key)} href="javascript:;">删除</a>
                                     </span>
                                 )}
                             />
                         </Table>
                 })
             })
+    }
+    delete(key){
+        dblog(key)
+            .then(res=>{
+                this.componentDidMount()
+            })
+    }
+    modify(key){
+        const action = {
+          type:"change_blog",
+          admin:4,
+          value:key
+        }
+        store.dispatch(action)
     }
     render() {
         return (

@@ -1,6 +1,7 @@
 const defaultState = {
     welcome:false,
-    admin: 1
+    admin: 1,
+    change:null
 }
 
 export default (state = defaultState, action)=>{
@@ -16,6 +17,12 @@ export default (state = defaultState, action)=>{
         newState.admin = action.value
     }else if(action.type == "change_meau4"){
         newState.admin = action.value
+    }else if(action.type == "change_blog"){
+        newState.admin = action.admin
+        newState.change = action.value
+    }else if(action.type == "change_blog2"){
+        newState.admin = action.admin
+        newState.change = action.value
     }
 
     //新的newState会自动替换老的state

@@ -170,7 +170,7 @@ class Index extends React.Component{
                     <Img src="../../static/img/bg_index.jpg" alt=""/>  {/* 页面背景图片 */}
                     <Idiv>{/*第一部分*/}
                         <p style={index_p}>Welcome To My Personal Blog</p>
-                        <Span>Leave me more <div style={blue}>messages~</div></Span>
+                        <Link to="/signin"><Span style={{color:"rgb(255,255,255)"}}>Leave me more <div style={blue}>messages~</div></Span></Link>
                         <Link to="/blog"><Button type="primary" style={index_button}>Entry</Button></Link>
                     </Idiv>
                     <div className="div_1"></div>

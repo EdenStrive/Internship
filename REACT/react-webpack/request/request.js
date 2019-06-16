@@ -1,5 +1,5 @@
 import axios from 'axios'
-const host = 'http://127.0.0.1:5000'
+const host = 'http://119.29.183.36:5000'
 
 //获取博文技术栈
 const getIntroduce = () => axios.get(host + "/")
@@ -81,4 +81,29 @@ const blogList = () =>{
     return axios.get(host+'/bloglist')
 }
 
-export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin , signup , getsaid , setSaid , blogList }
+//发布文章
+const pblog = ( title , content , time ) =>{
+    return axios.post(host+'/pblog',{
+        title: title,
+        content : content,
+        time : time
+    })
+}
+
+//删除文章
+const dblog = (id) =>{
+    return axios.post(host+'/dblog',{
+        id:id
+    })
+}
+
+//修改文章
+const cblog = (id,title,content) =>{
+    return axios.post(host+'/cblog',{
+        id:id,
+        title:title,
+        content:content
+    })
+}
+
+export { getIntroduce , getLike , getLnumber , inserLike , getNarticle ,getTotal , getBlogone , getBlogtwo , signin , signup , getsaid , setSaid , blogList , pblog , dblog , cblog }

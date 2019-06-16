@@ -4,6 +4,7 @@ import '../../../static/css/detail.css'
 import Footer from '../footer/footer'
 import { Spin, Alert } from 'antd'; 
 import { getBlogtwo } from '../../../request/request'
+import 'braft-editor/dist/index.css'
 
 const
 Idiv_4 = styled.div`

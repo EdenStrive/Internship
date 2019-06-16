@@ -154,6 +154,49 @@ async function bloglist(ctx){
     }) 
 }
 
+//发布文章
+async function pblog(ctx){
+    let title = ctx.request.body.title
+    let content = ctx.request.body.content
+    let time = ctx.request.body.time
+    let sql = 'INSERT INTO blog_article_detail SET ?'
+    let post = {title:title,content:content,create_time:time}
+    await query.query(sql,post)
+    .then(res => {
+        ctx.body = {code:0 , value :"发布成功！"}
+    })
+    .catch(err =>{
+        ctx.body = { code:1 , value:"发布失败" }
+    })
+}
+
+//删除文章
+async function dblog(ctx){
+    let id = ctx.request.body.id
+    let sql = "delete from blog_article_detail where id="+id
+    await query.query(sql)
+    .then(res => {
+        ctx.body = {code:0 , value :"删除成功！"}
+    })
+    .catch(err =>{
+        ctx.body = { code:1 , value:"删除失败" }
+    })
+}
+
+//修改文章
+async function cblog(ctx){
+    let id = ctx.request.body.id
+    let title = ctx.request.body.title
+    let content = ctx.request.body.content
+    let sql = "update blog_article_detail set title='"+title+"',content='"+content+"' where id="+id
+    await query.query(sql)
+    .then(res => {
+        ctx.body = {code:0 , value :"修改成功！"}
+    })
+    .catch(err =>{
+        ctx.body = { code:1 , value:"修改失败" }
+    })
+}
 
 //-----------------------------------------路由  
 module.exports = app => {
@@ -171,6 +214,9 @@ module.exports = app => {
     router.get('/getsaid', getsaid)
     router.post('/setsaid',setsaid)
     router.get('/bloglist', bloglist)
+    router.post('/pblog', pblog)
+    router.post('/dblog', dblog)
+    router.post('/cblog', cblog)
 
     app.use(router.routes()).use(router.allowedMethods());
 }

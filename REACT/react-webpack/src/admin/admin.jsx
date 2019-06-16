@@ -39,7 +39,10 @@ class Admin extends React.Component{
         }
     }
     componentWillUnmount(){
-        clearTimeout(this.push);
+            clearTimeout(this.push);
+            this.setState = (state, callback) =>{
+                return;
+            }
     }
     changeM(){
         let stores = store.getState().admin
@@ -79,13 +82,19 @@ class Admin extends React.Component{
             setTimeout(() => {
                 this.props.history.push("/");
             }, 1500);
+        }else if(id == 3){
+            const action = {
+              type:"change_meau2",
+              value:2
+            }
+            store.dispatch(action)
         }
     }
     render(){
         const menu = (
             <Menu>
               <Menu.Item>
-                <a>
+                <a onClick = {this.push.bind(this,3)}>
                     留言
                 </a>
               </Menu.Item>

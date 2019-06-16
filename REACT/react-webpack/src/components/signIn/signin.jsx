@@ -72,6 +72,11 @@ class Signin extends React.Component{
 
         });
     }
+    componentWillUnmount(){
+        this.setState = (state, callback) =>{
+            return;
+        }
+    }
     render(){
         const { getFieldDecorator } = this.props.form;
         return(
