@@ -2,6 +2,7 @@ import React from 'react'
 import "../../static/css/admin.less"
 import { removeCookie, getCookie } from '@/cookie/jsCookie'
 import { Menu, Dropdown, Icon , BackTop , message} from 'antd';
+import "antd/dist/antd.css"
 import Siderone from '@/components/roleOne/roleone'
 import Sidertwo from '@/components/roleTwo/roletwo'
 import Vmessage from '@/components/vmessage/vmessage' //查看留言

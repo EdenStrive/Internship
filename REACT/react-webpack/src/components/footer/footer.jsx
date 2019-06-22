@@ -35,6 +35,7 @@ class Footer extends React.Component{
                             <a>React</a>
                             <a>React-router</a>
                             <a>Koa</a>
+                            {/* <a href="http://www.beian.miit.gov.cn" target="_blank" style={{fontSize:"30px",fontFamily:"微软雅黑"}}>蒙ICP备18005898号</a> */}
                         </div>
                         <div className="foo_ico">
                             <a href="https://github.com/EdenStrive" target="_blank"><Icon type="github" style={{fontSize:"60px"}}/></a>

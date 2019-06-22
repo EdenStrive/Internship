@@ -166,7 +166,7 @@ async function pblog(ctx){
         ctx.body = {code:0 , value :"发布成功！"}
     })
     .catch(err =>{
-        ctx.body = { code:1 , value:"发布失败" }
+        ctx.body = { code:1 , value:err }
     })
 }
 

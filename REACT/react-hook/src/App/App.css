@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.App div{
+  width: 1000px;
+  border: 2px solid salmon;
+  padding: 20px;
+  margin: 20px;
+}
+

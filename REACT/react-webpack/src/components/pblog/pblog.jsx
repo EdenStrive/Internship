@@ -46,13 +46,13 @@ class Pblog extends React.Component {
         if (store.getState().change == null) {
             pblog(title , content , mydate)
             .then(res=>{
-                let flag = res.data.code
+                let flag = res.data
                 if (flag == 0) {
                     message.success(res.data.value, 1);
                 }
             })
         }else{
-            cblog(store.getState().change , title, content)
+            cblog( store.getState().change , title, content)
                 .then(res=>{
                     const action = {
                       type:"change_blog2",

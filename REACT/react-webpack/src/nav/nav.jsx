@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import store from "@/store/index"
 import { removeCookie, getCookie } from '@/cookie/jsCookie'
 import { message } from 'antd';
+import "antd/dist/antd.css"
 //--------------------css
 const 
 nav_an = keyframes`
@@ -129,7 +130,7 @@ class Nav extends React.Component{
                     </Ndiv>
                     }
                 </INav>
-                <GlobalStyle />  {/*前台全局css样式*/}
+                <GlobalStyle /> 
                 {/* 路由每次更改此Children */}
                 { this.props.children } 
             </div>
