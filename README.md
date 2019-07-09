@@ -23,6 +23,7 @@ github仓库主要包括内容
 - [x] react-router 4.x，使用antd分页器实现分页（前端实现）
 - [x] Redux
 - [x] react-redux
+- [x] typescript
 
 ### 3. 高亮一段代码[^code] 
 
