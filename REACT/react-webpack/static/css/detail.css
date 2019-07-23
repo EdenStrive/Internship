@@ -55,5 +55,18 @@
     margin-top: 45px;
 }
 pre{
-    background: rgb(242, 242, 243);
+    background: #f2f2f3;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+}
+blockquote{
+    border-left: 8px solid #d6d6d6;
+    padding: 10px;
+    background-color: rgb(242,242,243);
+    font-style: italic
+}
+hr{
+    height: 2px;
+    background-color: #309eff;
 }

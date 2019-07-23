@@ -30,6 +30,9 @@ class Signin extends React.Component{
     componentDidMount(){ //render后初始化部分请求
         scrollTo(0,0)//回到页面顶部
     }
+    seven(){
+        this.props.history.push("/signup");
+    }
     handleSubmit(e){
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -141,7 +144,7 @@ class Signin extends React.Component{
                                             initialValue: true,
                                         })(<Checkbox>Remember me</Checkbox>)}<br/>
                                             {this.state.button}
-                                            &nbsp;&nbsp;&nbsp;&nbsp;Or <a href="">register now!</a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Or <a href="javascript:void(0)" onClick = {this.seven.bind(this)}>register now!</a>
                                         </Form.Item>
                                     </Form>
                                 </div>
