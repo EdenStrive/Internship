@@ -1,1 +1,92 @@
-<mxfile host="app.diagrams.net" modified="2022-05-18T12:24:33.788Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" version="16.2.2" etag="jfVgwqbfPNjVZb413suz" type="github"><diagram id="AcpsRm_KHWNsiurCH3sP">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-18T12:31:19.579Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="5vvLLJTPHIwoSBp-pZMW" version="16.2.2" type="github">
+  <diagram id="AcpsRm_KHWNsiurCH3sP" name="第 1 页">
+    <mxGraphModel dx="940" dy="612" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PNq2R1wEhkpaNyawEcav-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-1" target="PNq2R1wEhkpaNyawEcav-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-1" value="浏览器/域名" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-2" target="PNq2R1wEhkpaNyawEcav-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-2" target="PNq2R1wEhkpaNyawEcav-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-2" value="网关服务" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-4" value="其他模块（ AIP / DAP / ADS ）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="200" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-5" target="PNq2R1wEhkpaNyawEcav-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-5" value="cos桶中的静态前端文件" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="240" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-7" value="访问" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="240" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-8" value="去取" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="240" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-10" value="返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="290" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-12" value="返回" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="290" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-13" value="CDP模块" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="400" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-15" target="PNq2R1wEhkpaNyawEcav-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-15" value="浏览器/域名" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-18" target="PNq2R1wEhkpaNyawEcav-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-18" value="网关服务" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-21" value="访问" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="440" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-25" target="PNq2R1wEhkpaNyawEcav-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PNq2R1wEhkpaNyawEcav-25" target="PNq2R1wEhkpaNyawEcav-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-25" value="服务A" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-27" value="根据域名" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="440" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-29" value="cdp后端服务" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-30" value="/api 匹配" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="410" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-34" value="cdp前端服务（docker镜像部署/ nginx）" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PNq2R1wEhkpaNyawEcav-35" value="其他" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="510" width="40" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
